@@ -2,6 +2,6 @@
 Um site para consultar e ajudar na escalação do seu time no Fantasy Game Cartola FC.
 
 ## Tecnologia
-NodeJS
-AngularJS
-Sass
+- NodeJS
+- AngularJS
+- Sass
