@@ -1,2 +1,2 @@
 # Cartolada
-Um site para consulta e ajudar na escalação do seu time no Fantasy Game Cartola FC.
+Um site para consultar e ajudar na escalação do seu time no Fantasy Game Cartola FC.
