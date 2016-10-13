@@ -54,7 +54,9 @@ app.all("/cartola/pos-rodada/destaques", function(req, res, next){
     rq.end();
 });
 
-var port = 3002;
+//app.all("/")
+
+var port = 3000;
 
 app.listen(port);
 
