@@ -10,6 +10,13 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "1.5.8"
+    "angular": "1.5.8",
+    "angular-sanitize": "1.5.8",
+    "font-awesome": "Font-Awesome#^4.6.3",
+    "angular-messages": "^1.5.8",
+    "angular-block-ui": "^0.2.2",
+    "angular-translate": "^2.12.1",
+    "angular-ui-notification": "^0.2.0",
+    "angular-ui-router": "^0.3.1"
   }
 }
