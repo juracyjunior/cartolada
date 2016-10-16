@@ -17,6 +17,7 @@
         return {
             init: init,
             setTitle: setTitle,
+            getTitle: getTitle,
             setSubtitle: setSubtitle,
             translate: translate,
             resetForm: resetForm
@@ -24,6 +25,8 @@
 
         function init()
         {
+            $rootScope.$page.systemTitle = parametroService.byName("systemName")
+
             $rootScope.$on("$stateChangeStart", stateChangeStart);
             $rootScope.$on('$stateNotFound', stateNotFound);
             $rootScope.$on('$stateChangeSuccess', stateChangeSuccess);
@@ -36,7 +39,7 @@
         {
             setTitle(translate(next.title));
             setSubtitle("");
-            $rootScope.$page.systemTitle = parametroService.byName("systemName") + " | " + next.title;
+            //$rootScope.$page.systemTitle = parametroService.byName("systemName") + " | " + getTitle();
         }
 
         function stateNotFound(event, unfoundState, fromState, fromParams) {}
@@ -56,6 +59,11 @@
         function setTitle(title)
         {
             $rootScope.$page.title = title; 
+        }
+
+        function getTitle()
+        {
+            return $rootScope.$page.title;
         }
 
         function setSubtitle(subtitle)

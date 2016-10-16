@@ -3,6 +3,8 @@
 
     angular.module("app.base",[]);
     angular.module("app.common",[]);
+    angular.module("app.main",[]);
+    angular.module("app.controls",[]);
 
     angular.module("app",[
         "ngSanitize",
@@ -14,6 +16,8 @@
         "ui.router",
 
         "app.base",
-        "app.common"
+        "app.common",
+        "app.main",
+        "app.controls"
     ]);
 })();

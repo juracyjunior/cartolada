@@ -12,6 +12,7 @@
         
         routes.forEach(function(r) {
             r.controllerAs = "vm";
+            r.templateUrl = "../../" + r.templateUrl; 
             $stateProvider.state(r.state, r);
         });
     }
@@ -23,7 +24,7 @@
                 state: "home",
                 url: "/home",
                 controller: "mainController",
-                templateUrl: "app/home/html/hom.html",
+                templateUrl: "home/html/home.html",
                 title: "paginas.home"
             }
         ];
