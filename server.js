@@ -8,14 +8,12 @@ require("./gulpfile.js");
 
 var app = express();
 
-app.use(express.static('dist'));
-
 var pages = {
     login: __dirname + "/security/html/login.html",
     app: __dirname + "/dist/main/html/main.html"
 }
 
-function getOptions(url, path)
+function getOptions(path)
 {
     return {
         "method": "GET",
@@ -61,6 +59,8 @@ app.get("/cartola/pos-rodada/destaques", function(req, res, next){
 app.get("/", function(req, res, next){
     res.sendFile(__dirname + "/dist/main/html/main.html");
 });
+
+app.use(express.static('dist'));
 
 app.listen(port);
 

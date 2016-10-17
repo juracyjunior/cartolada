@@ -1,5 +1,11 @@
-body
-{
+@import './tools/_converters';
+@import './tools/_breakpoints';
+@import './tools/_clearfix';
+@import './tools/_generated-content';
+@import './generics/_reset';
+
+body {
+	background: #ccc;
     font-family: Arial, Tahoma, Helvetica, sans-serif;
     font-size: 16px;
 }

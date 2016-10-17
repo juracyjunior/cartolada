@@ -25,7 +25,7 @@
 
         function init()
         {
-            $rootScope.$page.systemTitle = parametroService.byName("systemName")
+            $rootScope.$page.systemTitle = parametroService.byName("systemName");
 
             $rootScope.$on("$stateChangeStart", stateChangeStart);
             $rootScope.$on('$stateNotFound', stateNotFound);

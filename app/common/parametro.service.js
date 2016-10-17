@@ -8,7 +8,7 @@
     {
         var params = {
             "baseUrl": { "value": "/json/" },
-            "baseUrlBackEnd": {"value" : "/" },
+            "baseUrlBackEnd": {"value" : "http://localhost:3000/" },
             "systemName": { "value": "Cartolada" }
         };
 

@@ -1,0 +1,18 @@
+<div ng-controller="statusMercadoController as vm">
+    <h2>Status Mercado</h2>
+    <ul>
+        <li>Rodada #<span ng-bind="vm.data.rodada_atual"></span></li>
+        <li ng-if="vm.data.status_mercado === 2">
+            MERCADO FECHADO
+        </li>
+        <li ng-if="vm.data.status_mercado !== 2">
+            MERCADO ABERTO
+        </li>
+        <li ng-if="vm.data.status_mercado !== 2">
+            FECHARÁ EM <span ng-bind="vm.data.fechamento | dataHora"></span>
+        </li>
+        <li>
+            <div ng-bind="vm.data.aviso"></div>
+        </li>
+    </ul>
+</div>
