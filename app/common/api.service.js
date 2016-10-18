@@ -13,7 +13,7 @@
         {
             init: init,
             get: get,
-            getlocal: getlocal,
+            getLocal: getLocal,
             post: post,
             put: put,
             postFormData: postFormData
@@ -35,7 +35,7 @@
             return true;
         }
 
-        function getlocal(url) 
+        function getLocal(url) 
         {
             return $http.get(baseAddressLocal + url);
         }
