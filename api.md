@@ -76,7 +76,7 @@ Enviar um POST com o token no header, na chave **X-GLB-Token**.
 
 https://api.cartolafc.globo.com/auth/time/salvar
 
-O POST ter o formato abaixo:
+O POST deve conter o formato abaixo:
 
 ```
 [
