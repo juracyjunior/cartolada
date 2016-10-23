@@ -22,7 +22,7 @@
 
         function onSuccess(response)
         {
-            console.log(response.data);
+            //console.log(response.data);
             vm.data = response.data;
         }
     }

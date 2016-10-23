@@ -1,0 +1,34 @@
+.card-jogador
+{
+    display: inline-block;
+
+    &.card-jogador-foto
+    {
+        .img-jogador
+        {
+            width: 80px;
+        }
+    }
+
+    &.card-jogador-nome
+    {
+        .jogador-nome
+        {
+            display: block;
+        }
+
+        .jogador-posicao
+        {
+            background-color: color(primary);
+            color: color(light);
+            font-size: font-size(smaller);
+            padding: 5px;
+            display: inline-block;
+        }
+    }
+
+    &.card-jogador-escalacoes
+    {
+        float: right;
+    }
+}

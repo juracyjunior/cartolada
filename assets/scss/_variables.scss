@@ -29,8 +29,12 @@ $font-sizes: (
 ) !default;
 
 $border-radius-default: 2px;
+$border-default: 1px solid color(dark-lighter);
 
-$space-small: 10px;
-$space-default: 20px;
+$space-small_perc: 0.5%;
+$space-default_perc: 1%;
 
-$box-shadow-default: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+$space-small: 5px;
+$space-default: 10px;
+
+$box-shadow-default: 0px 2px 3px -1px rgba(0, 0, 0, 0.15);

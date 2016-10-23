@@ -2,21 +2,19 @@
 
 .aviso-mercado
 {
-    margin: $space-default 0;
-    padding: $space-default;
-    color: color(light);
-    background-color: color(danger);
-    border-radius: $border-radius-default;
+    margin: ($space-default * 2) 0;
+    padding: ($space-default * 2) ($space-default * 3);
+    padding-left: 70px;
     text-align: justify;
     position: relative;
+    border-radius: $border-radius-default * 4;
 
     .aviso-icon
     {
-        float: left;
         font-size: font-size(large);
         position: absolute;
-        top: -($space-default / 1.5);
-        left: -($space-default / 1.5);
+        top: 18px;
+        left: 16px;
         background-color: color(light);
         border: 4px solid color(danger);
         border-radius: 50%;
