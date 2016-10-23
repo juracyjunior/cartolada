@@ -1,0 +1,63 @@
+@charset 'UTF-8';
+
+// _config.scss
+/// Constant used to configure the minimum browser support used for some helpers,
+/// and components
+/// @group   Configs
+/// @access  private
+
+$browser-min-version: (
+  'chrome':  33,
+  'firefox': 26,
+  'ie':      8,
+  'safari':  5,
+  'opera':   10
+);
+
+// placeholders/_clearfix.scss
+/// Fixes browser's float bug.
+/// @group   Utilities
+/// @access  public
+///
+/// @require {variable} $browser-min-version
+///
+/// @example scss - Usage
+///   .element {
+///     @extend %clearfix;
+///   }
+///
+/// @example scss - Compiled
+///   .element:after {
+///     content: '';
+///     display: table;
+///     clear: both;
+///   }
+
+%clearfix {
+  @if map-has-key($browser-min-version, 'ie') {
+    $minimum-support: map-get($browser-min-version, 'ie');
+
+    @if $minimum-support < 8 {
+      &:before,
+      &:after {
+        content: '';
+        display: table;
+      }
+      &:after {
+        clear: both;
+      }
+
+      & {
+        zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+      }
+    } @else {
+      &:after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+    }
+  } @else {
+    @warn "The key 'ie' doesn't exists in '$browser-min-version' map";
+  }
+}

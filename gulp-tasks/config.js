@@ -4,16 +4,16 @@ module.exports = {
     appDir: "app",
     buildDir: "dist",
 
-    sourceCSS: "app/scss/**/*.scss",
+    sourceCSS: "assets/scss/**/*.scss",
     fileCSS: "styles.min.css",
     sassOutputStyle: "compressed",
     distCSS: "dist/css",
 
-    sourceJS : "app/**/*.js",
+    sourceJS : "assets/app/**/*.js",
     fileJS : "scripts.min.js",
     distJS : "dist/js",
 
-    sourceHTML : "app/**/*.html",
+    sourceHTML : "assets/app/**/*.html",
 
     sourceLibJS: [
         "lib/angular/angular.min.js",

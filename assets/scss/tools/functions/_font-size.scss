@@ -1,0 +1,21 @@
+@charset 'UTF-8';
+
+/// Function to return font size
+/// @group   Functions
+/// @access  private
+///
+/// @param   {string} $font-size-key - Font size key
+///
+/// @return  {number} - Font size value
+
+@function font-size($font-size-key) 
+{
+	@if type-of($font-size-key) == 'string' 
+	{
+    	@return map-get($font-sizes, $font-size-key);
+  	} 
+	@else 
+	{
+   		@warn "#{$font-size-key} it's not a string";
+  	}
+}

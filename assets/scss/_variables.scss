@@ -1,0 +1,36 @@
+@charset 'UTF-8';
+
+/// Colors map to system
+/// @group   Color
+$colors: (
+	light       : #fff,
+	base        : #f8f8f8,
+  	primary     : #337ab7, 
+  	danger      : #ff182a,
+	success     : #00b136,
+  	warning     : #ff6500,
+  	info        : #5bc0de,
+	dark-lighter: #ddd,
+	dark-light  : #777,
+  	dark        : #000
+) !default;
+
+/// Fonts map to system
+/// @group   Fonts
+$font-sizes: (
+  smaller : 10px,
+  small   : 12px, 
+  base    : 14px,
+  medium  : 16px,
+  large   : 18px,
+  largeer : 20px,
+  xlarge  : 22px,
+  xxlarge : 24px
+) !default;
+
+$border-radius-default: 2px;
+
+$space-small: 10px;
+$space-default: 20px;
+
+$box-shadow-default: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);

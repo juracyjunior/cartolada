@@ -1,0 +1,27 @@
+@charset 'UTF-8';
+
+/// CSS generated blank content
+///
+/// @param   {number} $width    [100%] - Pseudo-element needed width
+/// @param   {number} $height   [100%] - Pseudo-element needed height
+///
+/// @example scss - Usage
+///   .element:after {
+///     @include generated-content(50px, 20px);
+///   }
+///
+/// @example scss - Compiled
+///   .element:after {
+///     display: inline-block;
+///     width: 50px;
+///     height: 20px;
+///     content: '';
+///   }
+
+@mixin generated-content($width: 100%, $height: 100%) {
+  display: inline-block;
+  width: $width;
+  height: $height;
+
+  content: '';
+}

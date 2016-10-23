@@ -1,0 +1,25 @@
+.box-view
+{
+    background-color: color(light);
+    border-radius: $border-radius-default;
+    padding: $space-default;
+    box-shadow: $box-shadow-default;
+    padding: $space-default;
+
+    .box-title
+    {
+        color: color(warning);
+        text-transform: uppercase;
+        font-size: font-size(smaller);
+        margin-bottom: 10px;
+        display: block;
+        font-weight: bold;
+    }
+
+    section + .box-title
+    {
+        margin-top: $space-default;
+        border-top: 1px solid color(dark-lighter);
+        padding-top: $space-default;
+    }
+}
