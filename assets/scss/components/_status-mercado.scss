@@ -1,0 +1,19 @@
+@charset 'UTF-8';
+
+.status-mercado
+{
+    margin-top: $space-default;
+    text-align: center;
+
+    .fechado
+    {
+        color: color(danger);
+        font-weight: bold;
+    }
+
+    .aberto
+    {
+        color: color(success);
+        font-weight: bold;
+    }
+}

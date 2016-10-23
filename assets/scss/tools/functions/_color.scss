@@ -1,0 +1,21 @@
+@charset 'UTF-8';
+
+/// Function to return color code
+/// @group   Functions
+/// @access  private
+///
+/// @param   {string} $color-key - Color key
+///
+/// @return  {color} - Color value
+
+@function color($color-key) 
+{
+	@if type-of($color-key) == 'string' 
+	{
+    	@return map-get($colors, $color-key);
+  	} 
+	@else 
+	{
+   		@warn "#{$color-key} it's not a string";
+  	}
+}

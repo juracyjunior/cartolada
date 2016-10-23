@@ -1,0 +1,12 @@
+.destaques-rodada-media
+{
+    .media-title
+    {
+        color: color(success);
+    }
+
+    dd + dt
+    {
+        margin-top: $space-small + 5px;
+    }
+}

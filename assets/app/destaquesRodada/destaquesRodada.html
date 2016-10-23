@@ -1,0 +1,23 @@
+<label class="box-title">Destaques da Rodada</label>
+<section class="destaques-rodada-media">
+    <dl>
+        <dt class="media-title">
+            Média de Cartoletas
+        </dt>
+        <dd ng-bind="vm.data.media_cartoletas | currency:'C$'"></dd>
+        <dt class="media-title">
+            Média de Pontos
+        </dt>
+        <dd ng-bind="vm.data.media_pontos | number:2"></dd>
+    </dl>
+</section>
+<label class="box-title">Mitou na Rodada</label>
+<section class="destaques-rodada-mitou">
+    <figure>
+        <img src="{{vm.data.mito_rodada.url_escudo_png}}" />
+    </figure>
+    <dl>
+        <dt ng-bind="vm.data.mito_rodada.nome"></dt>
+        <dd ng-bind="vm.data.mito_rodada.nome_cartola"></dd>
+    </dl>
+</section>

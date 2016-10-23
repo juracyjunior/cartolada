@@ -1,0 +1,10 @@
+@charset 'UTF-8';
+
+body 
+{
+    padding: 5px $space-default 10px $space-default;
+	background-color: color(base);
+    color: color(dark-light);
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: font-size(base);
+}

@@ -57,7 +57,7 @@ app.get("/cartola/pos-rodada/destaques", function(req, res, next){
 });
 
 app.get("/", function(req, res, next){
-    res.sendFile(__dirname + "/dist/main/html/main.html");
+    res.sendFile(__dirname + "/dist/main/main.html");
 });
 
 app.use(express.static('dist'));

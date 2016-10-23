@@ -1,0 +1,24 @@
+@charset 'UTF-8';
+
+@import './tools/functions/converters';
+@import './tools/functions/font-size';
+@import './tools/functions/color';
+
+@import './tools/mixins/breakpoints';
+@import './tools/mixins/generated-content';
+
+@import './tools/placeholders/clearfix';
+
+@import './generics/reset';
+
+@import './variables';
+
+@import './elements/body';
+@import './elements/header';
+
+@import './components/box-view';
+@import './components/status-mercado';
+@import './components/aviso-mercado';
+@import './components/box-view-destaques';
+@import './components/destaques-rodada-media';
+@import './components/destaques-rodada-mitou';
