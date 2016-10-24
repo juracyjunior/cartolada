@@ -8,4 +8,9 @@
         padding-top: $space-default;
         border-top: $border-default;
     }
+
+    label + &
+    {
+        margin-top: 10px;
+    }
 }

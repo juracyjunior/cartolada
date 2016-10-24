@@ -1,6 +1,22 @@
+$space-card: 2%;
+
 .card-jogador
 {
-    display: inline-block;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 $space-card;
+    width: $space-card;
+    white-space: nowrap;
+
+    &.card-jogador-clube
+    {
+        text-align: center;
+
+        .img-clube
+        {
+            width: 40px;
+        }
+    }
 
     &.card-jogador-foto
     {
@@ -12,6 +28,8 @@
 
     &.card-jogador-nome
     {
+        text-align: left;
+
         .jogador-nome
         {
             display: block;
@@ -19,16 +37,22 @@
 
         .jogador-posicao
         {
-            background-color: color(primary);
-            color: color(light);
+            background-color: color(dark-lighter);
+            //color: color(light);
             font-size: font-size(smaller);
-            padding: 5px;
+            padding: 3px 5px;
             display: inline-block;
+            border-radius: $border-radius-default;
+            margin-top: 3px;
+            text-transform: uppercase;
         }
     }
 
     &.card-jogador-escalacoes
     {
-        float: right;
+        width: 100% - ($space-card * 9);
+        text-align: right;
+        font-size: 20px;
+        color: color(success);
     }
 }

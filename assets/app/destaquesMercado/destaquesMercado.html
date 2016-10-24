@@ -3,7 +3,7 @@
     <label class="box-subtitle">Jogadores mais escalados</label>
     <section ng-repeat="item in vm.data" class="card">
         <ul>
-            <li class="card-clube">
+            <li class="card-jogador card-jogador-clube">
                 <figure><img class="img-clube" src="{{item.escudo_clube}}" /></figure>
                 <label ng-bind="item.clube"></label>
             </li>
@@ -16,9 +16,7 @@
                 <label class="jogador-nome" ng-bind="item.Atleta.apelido"></label>
                 <label class="jogador-posicao" ng-bind="item.posicao"></label>
             </li>
-            <li class="card-jogador card-jogador-escalacoes">
-                <label ng-bind="item.escalacoes | number:0"></label>    
-            </li>
+            <li class="card-jogador card-jogador-escalacoes" ng-bind="item.escalacoes | number:0"></li>
         </ul>
     </section>
 </section>
