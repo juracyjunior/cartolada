@@ -2,9 +2,9 @@
     "use strict";
 
     angular.module("app").
-        controller("destaquesRodadaController", ["destaquesRodadaService", "apiService", "$locale", destaquesRodadaController]);
+        controller("destaquesRodadaController", ["destaquesRodadaService", "apiService", destaquesRodadaController]);
 
-    function destaquesRodadaController(destaquesRodadaService, apiService, $locale)
+    function destaquesRodadaController(destaquesRodadaService, apiService)
     {
         /*jshint validthis:true*/
         var vm = this;
@@ -22,7 +22,7 @@
 
         function onSuccess(response)
         {
-            console.log(response.data);
+            //console.log(response.data);
             vm.data = response.data;
         }
     }
