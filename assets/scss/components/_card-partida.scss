@@ -1,0 +1,35 @@
+.card-partida
+{
+    .time-partida
+    {
+        width: 41%;
+        display: table-cell;
+
+        &.mandante
+        {
+            text-align: right;
+            padding-right: 1%;
+        }        
+
+        &.visitante
+        {
+            text-align: left;
+            padding-left: 1%;
+        }
+    }
+
+    .placar
+    {
+        text-align: center;
+        width: 10%;
+        font-size: font-size(xxlargest);
+        color: color(dark);
+        display: table-cell;
+    }
+
+    .vs
+    {
+        width: 2%;
+        display: table-cell;
+    }
+}

@@ -18,14 +18,16 @@ $colors: (
 /// Fonts map to system
 /// @group   Fonts
 $font-sizes: (
-  smaller : 10px,
-  small   : 12px, 
-  base    : 14px,
-  medium  : 16px,
-  large   : 18px,
-  largeer : 20px,
-  xlarge  : 22px,
-  xxlarge : 24px
+  smaller   : 10px,
+  small     : 12px, 
+  base      : 14px,
+  medium    : 16px,
+  large     : 18px,
+  larger    : 20px,
+  xlarge    : 22px,
+  xxlarge   : 24px,
+  xxlarger  : 26px,
+  xxlargest : 28px
 ) !default;
 
 $border-radius-default: 2px;

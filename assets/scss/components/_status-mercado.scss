@@ -16,4 +16,12 @@
         color: color(success);
         font-weight: bold;
     }
+
+    .rodada-atual
+    {
+        font-weight: bold;
+        color: color(dark);
+        font-size: font-size(large);
+        margin-top: 10px;
+    }
 }

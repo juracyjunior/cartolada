@@ -1,0 +1,27 @@
+.aproveitamento-time
+{
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    display: inline-block;
+
+    & + &
+    {
+        margin-left: 2px;
+    }
+    
+    &.d
+    {
+        background-color: color(danger);
+    }
+
+    &.e
+    {
+        background-color: color(dark-light);
+    }
+
+    &.v
+    {
+        background-color: color(success);
+    }
+}

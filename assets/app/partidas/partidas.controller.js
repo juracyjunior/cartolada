@@ -9,6 +9,8 @@
         /*jshint validthis:true*/
         var vm = this;
 
+        vm.getClube = getClube;
+
         init();
 
         function init(){
@@ -24,6 +26,10 @@
         {
             console.log(response.data);
             vm.data = response.data;
+        }
+
+        function getClube(codigo){
+            return vm.data.clubes[codigo];
         }
     }
 })();

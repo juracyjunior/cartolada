@@ -9,7 +9,7 @@
         <dt ng-if="vm.data.status_mercado !== 2">
             FECHARÁ EM <span ng-bind="vm.data.fechamento | dataHora"></span>
         </dt>
-        <dd>Rodada #<span ng-bind="vm.data.rodada_atual"></span></dd>
+        <dd class="rodada-atual" ng-bind="'Rodada #' + vm.data.rodada_atual"></dd>
     </dl>
 </section>
 <section class="box-view box-view-danger aviso-mercado" ng-show="vm.data.aviso">

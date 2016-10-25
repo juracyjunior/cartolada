@@ -1,20 +1,23 @@
 <label class="box-title">Partidas</label>
-<label class="box-subtitle">Rodada #99</label>
-<section ng-repeat="item in vm.data" class="card">
-    <!--ul>
-        <li>
-            <figure><img class="img-clube" src="{{item.escudo_clube}}" /></figure>
-            <label ng-bind="item.clube"></label>
+<!--label class="box-subtitle" ng-bind="'Rodada #' + vm.data.rodada"></label-->
+<section ng-repeat="item in vm.data.partidas" class="card card-partida">
+    <ul>
+        <li class="time-partida mandante">
+            <figure><img class="img-clube" src="{{vm.getClube(item.clube_casa_id).escudos['30x30']}}" /></figure>
+            <label>
+                <span ng-repeat="aproveitamento in item.aproveitamento_mandante track by $index" 
+                    class="aproveitamento-time {{aproveitamento}}"></span>
+            </label>
         </li>
-        <li class="card-jogador card-jogador-foto">
-            <figure>
-                <img class="img-jogador" src="{{item.Atleta.foto.replace('FORMATO','140x140')}}" />
-            </figure>
+        <li class="placar" ng-bind="item.placar_oficial_mandante"></li>
+        <li class="vs">X</li>
+        <li class="placar" ng-bind="item.placar_oficial_visitante"></li>
+        <li class="time-partida visitante">
+            <figure><img class="img-clube" src="{{vm.getClube(item.clube_visitante_id).escudos['30x30']}}" /></figure>
+            <label>
+                <span ng-repeat="aproveitamento in item.aproveitamento_visitante track by $index" 
+                    class="aproveitamento-time {{aproveitamento}}"></span>
+            </label>
         </li>
-        <li class="card-jogador card-jogador-nome">
-            <label class="jogador-nome" ng-bind="item.Atleta.apelido"></label>
-            <label class="jogador-posicao" ng-bind="item.posicao"></label>
-        </li>
-        <li class="card-jogador card-jogador-escalacoes" ng-bind="item.escalacoes | number:0"></li>
-    </ul-->
+    </ul>
 </section>
