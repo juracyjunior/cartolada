@@ -71,6 +71,21 @@ app.get("/cartola/pos-rodada/destaques", function(req, res, next){
     rq.end();
 });
 
+app.get("/cartola/partidas", function(req, res, next){
+    var options = getOptions("/partidas");
+    var rq = http.request(options, function(r){
+        var chunks = [];
+        r.on("data", function(chunk){
+            chunks.push(chunk);
+        });
+        r.on("end", function(){
+            var body = Buffer.concat(chunks);
+        res.send(body.toString());
+        });
+    });
+    rq.end();
+});
+
 app.get("/", function(req, res, next){
     res.sendFile(__dirname + "/dist/main/main.html");
 });
