@@ -42,19 +42,19 @@ https://api.cartolafc.globo.com/times?q=[nome do time]
 
 ###Busca informações de um time pelo slug
 
-https://api.cartolafc.globo.com/time/<slug_do_time>
+https://api.cartolafc.globo.com/time/[slug_do_time]
 
 ###Busca informações de um time por rodada usando o slug do time e o número da rodada
 
-https://api.cartolafc.globo.com/time/<slug_do_time>/<rodada>
+https://api.cartolafc.globo.com/time/[slug_do_time]/[rodada]
 
 ###Busca ligas
 
-https://api.cartolafc.globo.com/ligas?q=<nome_da_liga>
+https://api.cartolafc.globo.com/ligas?q=[nome_da_liga]
 
 ###Busca informações de uma liga específica pelo slug da liga (necessário token)
 
-https://api.cartolafc.globo.com/auth/liga/<slug_da_liga>
+https://api.cartolafc.globo.com/auth/liga/[slug_da_liga]
 
 ###Retornar informações do time do usuario logado (necessário token)
 
