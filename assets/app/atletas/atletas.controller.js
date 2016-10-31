@@ -10,9 +10,13 @@
         var vm = this;
         vm.orderBy = 'apelido';
 
-        vm.listaAtletas = [];
         vm.pagina = [];
         vm.qtdPaginas = 0;
+
+        vm.posicoes = [];
+        vm.clubes = [];
+        vm.status = [];
+        vm.atletas = [];
 
         var tamanhoPagina = 20;
 
@@ -31,8 +35,13 @@
         {
             console.log(response.data);
             vm.data = response.data;
-            vm.listaAtletas = orderBy(vm.data.atletas, vm.orderBy);
-            vm.qtdPaginas = Math.round(vm.listaAtletas.lenght / tamanhoPagina) - 1;
+            
+            vm.posicoes = vm.data.posicoes;
+            vm.clubes = vm.data.clubes;
+            vm.status = vm.data.status;
+            vm.atletas = orderBy(vm.data.atletas, vm.orderBy);
+            
+            vm.qtdPaginas = Math.round(vm.atletas.lenght / tamanhoPagina) - 1;
             getItensPagina(1);
         }
 
@@ -43,7 +52,7 @@
             vm.pagina = [];
             for (var i = inicio; i <= fim; i++)
             {
-                vm.pagina.push(vm.listaAtletas[i]);
+                vm.pagina.push(vm.atletas[i]);
             }
         }
     }

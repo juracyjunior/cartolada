@@ -14,7 +14,7 @@
     <section ng-repeat="item in vm.pagina | orderBy : vm.orderBy" class="card">
         <ul>
             <li class="card-jogador card-jogador-clube">
-                <figure><img class="img-clube" ng-src="{{vm.data.clubes | clubeEscudo : item.clube_id}}" /></figure>
+                <figure><img class="img-clube" ng-src="{{vm.clubes | clubeEscudo : item.clube_id}}" /></figure>
                 <label ng-bind="item.clube"></label>
             </li>
             <li class="card-jogador card-jogador-foto">
@@ -24,7 +24,7 @@
                 <span class="jogador-nome" ng-bind="item.apelido"></span>
             </li>
             <li class="card-jogador card-jogador-nome">
-                <span class="jogador-posicao" ng-bind="vm.data.posicoes | posicaoAbreviacao : item.posicao_id"></span>
+                <span class="jogador-posicao" ng-bind="vm.posicoes | posicaoAbreviacao : item.posicao_id"></span>
             </li>
             <li class="card-jogador card-jogador-scouts">
                 <dl>
