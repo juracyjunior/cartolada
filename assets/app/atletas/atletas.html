@@ -1,0 +1,45 @@
+<section class="box-view">
+    <dl>
+        <dt>Ordenar por</dt>
+        <dd>
+            <select ng-model="vm.orderBy">
+                <option value="apelido" selected>Nome</option>
+                <option value="media_num">Média</option>
+                <option value="pontos_num">Pontos</option>
+                <option value="preco_num">Preço</option>
+                <option value="variacao_num">Variação</option>
+            </select>
+        </dd>
+    </dl>
+    <section ng-repeat="item in vm.pagina | orderBy : vm.orderBy" class="card">
+        <ul>
+            <li class="card-jogador card-jogador-clube">
+                <figure><img class="img-clube" ng-src="{{vm.data.clubes | clubeEscudo : item.clube_id}}" /></figure>
+                <label ng-bind="item.clube"></label>
+            </li>
+            <li class="card-jogador card-jogador-foto">
+                <figure>
+                    <img class="img-jogador" ng-src="{{item.foto | atletaFoto}}" />
+                </figure>
+                <span class="jogador-nome" ng-bind="item.apelido"></span>
+            </li>
+            <li class="card-jogador card-jogador-nome">
+                <span class="jogador-posicao" ng-bind="vm.data.posicoes | posicaoAbreviacao : item.posicao_id"></span>
+            </li>
+            <li class="card-jogador card-jogador-scouts">
+                <dl>
+                    <dt class="card-jogador-scouts-titulo">Jogos</dt>
+                    <dd class="card-jogador-scouts-valor" ng-bind="item.jogos_num"></dd>
+                    <dt>Média</dt>
+                    <dd ng-bind="item.media_num | number"></dd>
+                    <dt>Pontos</dt>
+                    <dd ng-bind="item.pontos_num | number"></dd>
+                    <dt>Preço</dt>
+                    <dd ng-bind="item.preco_num | currency"></dd>
+                    <dt>Variação</dt>
+                    <dd ng-bind="item.variacao_num | number"></dd>
+                </dl>
+            </li>
+        </ul>
+    </section>
+</section>

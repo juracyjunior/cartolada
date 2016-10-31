@@ -1,0 +1,16 @@
+@charset 'UTF-8';
+
+.box-title
+{
+    color: color(success);
+    text-transform: uppercase;
+    font-size: font-size(medium);
+    margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+
+    & + dd
+    {
+        margin-bottom: $space-default;
+    }
+}

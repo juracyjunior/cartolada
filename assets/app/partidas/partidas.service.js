@@ -12,7 +12,7 @@
 
         function get()
         {
-            return apiService.get("cartola/partidas");
+            return apiService.get("partidas");
         }
     }
 })();

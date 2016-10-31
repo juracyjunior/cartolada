@@ -18,7 +18,10 @@
             naoEncontrado     : "Informação não encontrada"
         },
         paginas:{
-            home: "Home"
+            home: "Home",
+            destaquesrodada: "Destaques rodada",
+            destaquesmercado: "Destaques mercado",
+            proximaspartidas: "Próximas partidas"
         },
         moeda: {
             simbolo: "R$",

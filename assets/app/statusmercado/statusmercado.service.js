@@ -12,7 +12,7 @@
 
         function get()
         {
-            return apiService.get("cartola/mercado/status");
+            return apiService.get("mercado/status");
         }
     }
 })();

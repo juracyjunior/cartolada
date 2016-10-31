@@ -1,23 +1,25 @@
-<label class="box-title">Partidas</label>
-<!--label class="box-subtitle" ng-bind="'Rodada #' + vm.data.rodada"></label-->
-<section ng-repeat="item in vm.data.partidas" class="card card-partida">
-    <ul>
-        <li class="time-partida mandante">
-            <figure><img class="img-clube" src="{{vm.getClube(item.clube_casa_id).escudos['30x30']}}" /></figure>
-            <label>
-                <span ng-repeat="aproveitamento in item.aproveitamento_mandante track by $index" 
-                    class="aproveitamento-time {{aproveitamento}}"></span>
-            </label>
-        </li>
-        <li class="placar" ng-bind="item.placar_oficial_mandante"></li>
-        <li class="vs">X</li>
-        <li class="placar" ng-bind="item.placar_oficial_visitante"></li>
-        <li class="time-partida visitante">
-            <figure><img class="img-clube" src="{{vm.getClube(item.clube_visitante_id).escudos['30x30']}}" /></figure>
-            <label>
-                <span ng-repeat="aproveitamento in item.aproveitamento_visitante track by $index" 
-                    class="aproveitamento-time {{aproveitamento}}"></span>
-            </label>
-        </li>
-    </ul>
+<section class="box-view box-view-partidas">
+    <section ng-repeat="item in vm.data.partidas | orderBy: 'partida_data'" class="card card-partida">
+        <ul class="partida-jogo">
+            <li class="time-partida mandante">
+                <figure><img class="img-clube" src="{{vm.data.clubes | clubeEscudo : item.clube_casa_id}}" /></figure>
+                <label>
+                    <span ng-repeat="aproveitamento in item.aproveitamento_mandante track by $index" 
+                        class="aproveitamento-time {{aproveitamento}}"></span>
+                </label>
+            </li>
+            <li class="placar" ng-bind="item.placar_oficial_mandante"></li>
+            <li class="vs">X</li>
+            <li class="placar" ng-bind="item.placar_oficial_visitante"></li>
+            <li class="time-partida visitante">
+                <figure><img class="img-clube" src="{{vm.data.clubes | clubeEscudo : item.clube_visitante_id}}" /></figure>
+                <label>
+                    <span ng-repeat="aproveitamento in item.aproveitamento_visitante track by $index" 
+                        class="aproveitamento-time {{aproveitamento}}"></span>
+                </label>
+            </li>
+        </ul>
+        <p class="partida-data" ng-bind="item.partida_data | dataHoraSrt"></p>
+        <p class="partida-local" ng-bind="item.local"></p>
+    </section>
 </section>

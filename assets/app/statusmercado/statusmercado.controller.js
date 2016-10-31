@@ -2,9 +2,9 @@
     "use strict";
 
     angular.module("app").
-        controller("statusMercadoController", ["$rootScope", "statusMercadoService", "apiService", statusMercadoController]);
+        controller("statusMercadoController", ["statusMercadoService", "apiService", statusMercadoController]);
 
-    function statusMercadoController($rootScope, statusMercadoService, apiService)
+    function statusMercadoController(statusMercadoService, apiService)
     {
         /*jshint validthis:true*/
         var vm = this;
@@ -22,9 +22,7 @@
 
         function onSuccess(response)
         {
-            //console.log(response.data);
             vm.data = response.data;
-            $rootScope.rodadaAtual = vm.data.rodada_atual;
         }
     }
 })();

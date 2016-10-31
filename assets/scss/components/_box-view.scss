@@ -1,43 +1,13 @@
+@charset 'UTF-8';
+
 .box-view
 {
     background-color: color(light);
     color: color(dark-light);
     border-radius: $border-radius-default;
-    padding: $space-default;
+    padding: $space-default + 10px;
     box-shadow: $box-shadow-default;
-    padding: $space-default;
-
-    &.box-view-danger
-    {
-        background-color: color(danger);
-        color: color(light);
-    }
-
-    .box-title
-    {
-        color: color(warning);
-        text-transform: uppercase;
-        font-size: font-size(smaller);
-        margin-bottom: 10px;
-        display: block;
-        font-weight: bold;
-
-    }
-
-    .box-subtitle
-    {
-        color: color(success);
-
-        & + dd
-        {
-            margin-bottom: $space-default;
-        }
-    }
-
-    section + .box-title
-    {
-        margin-top: $space-default;
-        border-top: $border-default;
-        padding-top: $space-default;
-    }
+    width: 520px;
+    text-align: center;
+    margin: 0 auto;
 }

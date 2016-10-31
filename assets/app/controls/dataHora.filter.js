@@ -2,7 +2,8 @@
     "use strict";
 
     angular.module("app.controls")
-        .filter('dataHora', [dataHora]);
+        .filter('dataHora', [dataHora])
+        .filter('dataHoraSrt', [dataHoraSrt]);
 
     function dataHora()
     {
@@ -13,6 +14,19 @@
                 obj.ano + " " + 
                 obj.hora.toString().lpad(2,"0") + ":" + 
                 obj.minuto.toString().lpad(2,"0");
+        };
+    }
+
+    function dataHoraSrt(obj)
+    {
+        return function (obj)
+        {
+            console.log(obj);
+            var data = obj.toString().split(" ")[0].split("-");
+            var hora = obj.toString().split(" ")[1];
+            console.log(data);
+            return data[2] + "/" + data[1] + "/" + data[0] + " " + hora.substring(0, 5); 
+            //return obj;
         };
     }
 })();

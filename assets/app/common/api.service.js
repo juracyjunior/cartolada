@@ -6,7 +6,7 @@
 
     function apiService($rootScope, $window, $http, parametroService)
     {
-        var baseAddress = parametroService.byName("baseUrlBackEnd");
+        var baseAddress = parametroService.byName("baseUrlBackEnd") + "cartola/";
         var baseAddressLocal = parametroService.byName("baseUrl");
 
         var service = 

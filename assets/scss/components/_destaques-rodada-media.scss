@@ -1,5 +1,9 @@
+@charset 'UTF-8';
+
 .destaques-rodada-media
 {
+    font-size: font-size(large);
+    
     dd + dt
     {
         margin-top: calc($space-small + 5px);

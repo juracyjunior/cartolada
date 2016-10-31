@@ -4,10 +4,11 @@
     angular.module("app").
         service("atletasService", ["apiService", atletasService]);
 
-    function atletasService(){
+    function atletasService(apiService){
         return {
             getAllPosicoes: getAllPosicoes,
-            getAllStatus: getAllStatus
+            getAllStatus: getAllStatus,
+            get: get
         };
 
         function getAllPosicoes()
@@ -18,6 +19,11 @@
         function getAllStatus()
         {
             return apiService.getLocal("json/status.json");
+        }
+
+        function get()
+        {
+            return apiService.get("atletas/mercado");
         }
     }
 })();

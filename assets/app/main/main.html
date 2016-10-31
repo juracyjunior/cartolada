@@ -11,9 +11,32 @@
     </head>
     <body>
         <header>
-            <label class="title" ng-bind="$page.systemTitle"></label>
-            <label class="subtitle" ng-bind="$page.systemSubtitle"></label>
+            <div class="content">
+                <h1 class="systemTitle" ng-bind="$page.systemTitle"></h1>
+                <nav class="menu-app">
+                    <ul>
+                        <li>
+                            <a ui-sref="destaquesRodada" ui-sref-active="active">Destaques rodada</a>
+                        </li>
+                        <li>
+                            <a ui-sref="destaquesMercado" ui-sref-active="active">Destaques mercado</a>
+                        </li>
+                        <li>
+                            <a ui-sref="proximaspartidas" ui-sref-active="active">Próximas partidas</a>
+                        </li>
+                        <li>
+                            <a ui-sref="atletas" ui-sref-active="active">Atletas</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </header>
-        <div ui-view></div>
+        <section class="box-ui-view">
+            <div class="content">
+                <section ng-controller="statusMercadoController as vm" class="status-mercado"
+                    ng-include="'../../statusmercado/statusmercado.html'"></section>
+                <div ui-view></div>
+            </div>
+        </section>
     </body>
 </html>

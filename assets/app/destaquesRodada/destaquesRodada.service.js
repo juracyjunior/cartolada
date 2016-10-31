@@ -12,7 +12,7 @@
 
         function get()
         {
-            return apiService.get("cartola/pos-rodada/destaques");
+            return apiService.get("pos-rodada/destaques");
         }
     }
 })();

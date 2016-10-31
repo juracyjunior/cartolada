@@ -27,6 +27,8 @@ mark, span, br {
     font-weight: normal;
     vertical-align: baseline;
     background: transparent;
+    -webkit-font-smoothing: antialiased;
+    outline: none;
 }
 button,
 select,
