@@ -2,12 +2,13 @@
 
 .aviso-mercado
 {
-    margin: ($space-default * 2) 0;
     padding: ($space-default * 2) ($space-default * 3);
     padding-left: 70px;
     text-align: justify;
     position: relative;
-    border-radius: $border-radius-default * 4;
+    border-radius: $border-radius-default + 2;
+    margin: 10px 0;
+    font-size: font-size(base);
 
     .aviso-icon
     {

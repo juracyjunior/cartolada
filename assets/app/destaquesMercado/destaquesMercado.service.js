@@ -12,7 +12,7 @@
 
         function get()
         {
-            return apiService.get("cartola/mercado/destaques");
+            return apiService.get("mercado/destaques");
         }
     }
 })();

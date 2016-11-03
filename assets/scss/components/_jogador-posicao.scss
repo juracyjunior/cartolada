@@ -1,0 +1,11 @@
+.jogador-posicao
+{
+    text-transform: uppercase;
+    font-size: font-size(smaller);
+    background-color: color(dark-light);
+    display: inline-block;
+    padding: 2px 3px;
+    border-radius: $border-radius-default;
+    color: color(light);
+    font-weight: bold;
+}

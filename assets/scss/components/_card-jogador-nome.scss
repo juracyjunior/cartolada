@@ -1,0 +1,25 @@
+@charset 'UTF-8';
+
+.card-jogador-nome
+{
+    text-align: left;
+    width: 200px;
+
+    .jogador-nome
+    {
+        display: block;
+    }
+
+    .jogador-posicao
+    {
+        background-color: color(dark-light);
+        color: color(light);
+        font-size: font-size(smaller);
+        font-weight: bold;  
+        padding: 3px 5px;
+        display: inline-block;
+        border-radius: $border-radius-default;
+        margin-top: 3px;
+        text-transform: uppercase;
+    }
+}

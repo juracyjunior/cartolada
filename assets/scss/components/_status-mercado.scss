@@ -2,18 +2,26 @@
 
 .status-mercado
 {
-    margin-top: $space-default;
-    text-align: center;
+    text-align: right;
+    color: color(dark-light);
+    margin-top: 3px;
+    float: right;
 
     .fechado
     {
         color: color(danger);
-        font-weight: bold;
     }
 
     .aberto
     {
         color: color(success);
+    }
+
+    .rodada-atual
+    {
+        background-color: color(light);
         font-weight: bold;
+        display: inline-block;
+        border-radius: $border-radius-default;
     }
 }

@@ -4,28 +4,31 @@
 /// @group   Color
 $colors: (
 	light       : #fff,
-	base        : #f8f8f8,
-  	primary     : #337ab7, 
-  	danger      : #ff182a,
+	base        : #f3f3f3,
+  primary     : #1E90FF,
+  primary-dark: #1275E7, 
+  danger      : #DC143C,
 	success     : #00b136,
-  	warning     : #ff6500,
-  	info        : #5bc0de,
-	dark-lighter: #ddd,
+  warning     : #FFC144,
+  info        : #5bc0de,
+	dark-lighter: #EBEBEB,
 	dark-light  : #777,
-  	dark        : #000
+  dark        : #000
 ) !default;
 
 /// Fonts map to system
 /// @group   Fonts
 $font-sizes: (
-  smaller : 10px,
-  small   : 12px, 
-  base    : 14px,
-  medium  : 16px,
-  large   : 18px,
-  largeer : 20px,
-  xlarge  : 22px,
-  xxlarge : 24px
+  smaller   : 10px,
+  small     : 12px, 
+  base      : 14px,
+  medium    : 16px,
+  large     : 18px,
+  larger    : 20px,
+  xlarge    : 22px,
+  xxlarge   : 24px,
+  xxlarger  : 26px,
+  xxlargest : 28px
 ) !default;
 
 $border-radius-default: 2px;
@@ -38,3 +41,5 @@ $space-small: 5px;
 $space-default: 10px;
 
 $box-shadow-default: 0px 2px 3px -1px rgba(0, 0, 0, 0.15);
+
+$header-height: 60px;

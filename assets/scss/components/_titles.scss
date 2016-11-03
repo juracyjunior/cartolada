@@ -1,0 +1,9 @@
+@charset 'UTF-8';
+
+.title
+{
+    display: inline-block;
+    font-size: font-size(xlarge);
+    padding-left: 20px;
+    line-height: $header-height;
+}

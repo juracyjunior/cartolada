@@ -2,12 +2,13 @@
 
 header
 {
-    text-align: center;
-
-    .title
-    {
-        font-size: font-size(xxlarge);
-        font-weight: bold;
-        display: block;
-    }
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: $header-height;
+    background-color: color(light);
+    color: color(light);
+    z-index: 10;
+    border-bottom: 1px solid color(success);
 }

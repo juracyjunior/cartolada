@@ -1,10 +1,11 @@
+@charset 'UTF-8';
+
 .card
 {
     text-align: left;
     
     & + .card
     {
-        //margin-top: $space-default;
         padding-top: $space-default;
         border-top: $border-default;
     }

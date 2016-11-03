@@ -1,0 +1,60 @@
+@charset 'UTF-8';
+
+.card-partida
+{
+    margin-bottom: 10px;
+    
+    .partida-jogo
+    {
+        display: flex;
+
+        .time-partida
+        {
+            width: 41%;
+            display: inline-block;
+
+            .img-clube
+            {
+                width: 40px;
+            }
+
+            &.mandante
+            {
+                text-align: right;
+                padding-right: 1%;
+            }        
+
+            &.visitante
+            {
+                text-align: left;
+                padding-left: 1%;
+            }
+        }
+
+        .placar
+        {
+            text-align: center;
+            width: 10%;
+            font-size: font-size(xxlargest);
+            color: color(dark);
+            display: inline-block;
+        }
+
+        .vs
+        {
+            width: 2%;
+            display: inline-block;
+            text-align: center;
+            line-height: 34px;
+        }
+    }
+
+    .partida-data,
+    .partida-local
+    {
+        display: block;
+        text-align: center;
+        font-size: font-size(small);
+        //color: color(dark);
+    }
+}

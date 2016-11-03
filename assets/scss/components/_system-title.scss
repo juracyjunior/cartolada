@@ -1,0 +1,11 @@
+@charset 'UTF-8';
+
+.systemTitle
+{
+    float: left;
+    width: 140px;
+    font-size: font-size(xxlarge);
+    line-height: $header-height;
+    font-weight: bold;
+    color: color(success);
+}

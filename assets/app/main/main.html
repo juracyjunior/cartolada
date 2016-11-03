@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" ng-app="app" ng-controller="mainController">
+<html lang="pt-br" ng-app="app" ng-controller="mainController as vm">
     <head>
         <title ng-bind="$page.systemTitle"></title>
         <meta charset="UTF-8">
@@ -11,9 +11,51 @@
     </head>
     <body>
         <header>
-            <label class="title" ng-bind="$page.systemTitle"></label>
-            <label class="subtitle" ng-bind="$page.systemSubtitle"></label>
+            <div class="content">
+                <h1 class="systemTitle" ng-bind="$page.systemTitle"></h1>
+                <nav class="menu-app">
+                    <ul>
+                        <li>
+                            <a ui-sref="destaquesRodada" ui-sref-active="active">Destaques rodada</a>
+                        </li>
+                        <li>
+                            <a ui-sref="destaquesMercado" ui-sref-active="active">Destaques mercado</a>
+                        </li>
+                        <li>
+                            <a ui-sref="proximaspartidas" ui-sref-active="active">Próximas partidas</a>
+                        </li>
+                        <li>
+                            <a ui-sref="atletas" ui-sref-active="active">Atletas</a>
+                        </li>
+                    </ul>
+                </nav>
+                <section class="status-mercado">
+                    <dl class="info-mercado">
+                        <dt class="fechado" ng-if="vm.data.status_mercado === 3">
+                            MERCADO EM ATUALIZAÇÃO
+                        </dt>
+                        <dt class="fechado" ng-if="vm.data.status_mercado === 2">
+                            MERCADO FECHADO
+                        </dt>
+                        <dt class="aberto" ng-if="vm.data.status_mercado === 1">
+                            MERCADO ABERTO
+                        </dt>
+                        <dd ng-if="vm.data.status_mercado === 1">
+                            até <span ng-bind="vm.data.fechamento | dataHora"></span>
+                        </dd>
+                        <dd class="rodada-atual" ng-bind="'Rodada #' + vm.data.rodada_atual"></dd>
+                    </dl>
+                </section>
+            </div>
         </header>
-        <div ui-view></div>
+        <section class="box-ui-view">
+            <div class="content">
+                <section class="box-view box-view-danger aviso-mercado" ng-show="vm.data.aviso">
+                    <i class="aviso-icon fa fa-exclamation-triangle"></i>
+                    <label ng-bind="vm.data.aviso"></label>
+                </section>
+                <div ui-view></div>
+            </div>
+        </section>
     </body>
 </html>
