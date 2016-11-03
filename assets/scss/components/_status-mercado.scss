@@ -2,8 +2,9 @@
 
 .status-mercado
 {
-    text-align: center;
-    font-size: font-size(large);
+    text-align: right;
+    color: color(dark-light);
+    margin-top: 3px;
 
     .fechado
     {
@@ -17,7 +18,9 @@
 
     .rodada-atual
     {
-        color: color(dark-light);
-        font-size: font-size(large);
+        background-color: color(light);
+        font-weight: bold;
+        display: inline-block;
+        border-radius: $border-radius-default;
     }
 }

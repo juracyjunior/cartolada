@@ -15,6 +15,7 @@
 
 @import './elements/body';
 @import './elements/header';
+@import './elements/buttons';
 
 @import './components/aproveitamento-time';
 @import './components/box-title';
@@ -25,14 +26,15 @@
 @import './components/box-view-destaques';
 @import './components/box-view-destaques-mercado';
 @import './components/box-view-partidas';
+@import './components/box-view-atletas';
 @import './components/card';
 @import './components/card-jogador';
 @import './components/card-jogador-clube';
 @import './components/card-jogador-foto';
 @import './components/card-jogador-nome';
-@import './components/card-jogador-scouts';
-@import './components/card-jogador-scouts-titulo';
-@import './components/card-jogador-scouts-valor';
+@import './components/card-jogador-escalacoes';
+@import './components/card-jogador-titulo';
+@import './components/card-jogador-dados';
 @import './components/card-partida';
 @import './components/content';
 @import './components/destaques-rodada-media';
@@ -41,3 +43,9 @@
 @import './components/status-mercado';
 @import './components/system-title';
 @import './components/titles';
+@import './components/img-clube';
+@import './components/img-jogador';
+@import './components/status-jogador';
+@import './components/box-view-atletas-filtros';
+@import './components/jogador-apelido';
+@import './components/jogador-posicao';

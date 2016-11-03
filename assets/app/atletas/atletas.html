@@ -1,45 +1,87 @@
-<section class="box-view">
+<section class="box-view-atletas-filtros">
     <dl>
-        <dt>Ordenar por</dt>
+        <dt>Time</dt>
         <dd>
-            <select ng-model="vm.orderBy">
-                <option value="apelido" selected>Nome</option>
+            <select ng-model="vm.clubeFiltro" ng-options="item as item.nome for item in vm.clubes track by item.id">
+                <option value="">Todos</option>
+            </select>
+        </dd>
+        <dt>Posição</dt>
+        <dd>
+            <select ng-model="vm.posicaoFiltro" ng-options="item as item.nome for item in vm.posicoes track by item.id">
+                <option value="">Todos</option>
+            </select>
+        </dd>
+        <dt>Status</dt>
+        <dd>
+            <select ng-model="vm.statusFiltro" ng-options="item as item.nome for item in vm.status track by item.id">
+                <option value="">Todos</option>
+            </select>
+        </dd>
+        <!--dt>Ordenar por</dt>
+        <dd>
+            <select ng-model="vm.ordenarPor">
+                <option value="apelido">Nome</option>
                 <option value="media_num">Média</option>
                 <option value="pontos_num">Pontos</option>
                 <option value="preco_num">Preço</option>
                 <option value="variacao_num">Variação</option>
             </select>
         </dd>
+        <dt>Tipo ordem</dt>
+        <dd>
+            <select ng-model="vm.tipoOrdem">
+                <option value="0">Crescente</option>
+                <option value="1">Decrescente</option>
+            </select>
+        </dd-->
     </dl>
-    <section ng-repeat="item in vm.pagina | orderBy : vm.orderBy" class="card">
-        <ul>
-            <li class="card-jogador card-jogador-clube">
+    <br/>
+    <button type="button" class="primary" ng-click="vm.filtrar()">Filtrar</button>
+</section>
+<section class="box-view box-view-atletas">
+    <div class="card-jogador">
+        <ul class="card-jogador-titulo">
+            <li>Time</li>
+            <li></li>
+            <li class="jogador-nome">Jogador</li>
+            <li>Status</li>
+            <li><button type="button" ng-click="vm.ordenarPor('preco_num')">Preço</button></li>
+            <li><button type="button" ng-click="vm.ordenarPor('variacao_num')">Var. Preço</button></li>
+            <li><button type="button" ng-click="vm.ordenarPor('pontos_num')">Ult. Pontos</button></li>
+            <li><button type="button" ng-click="vm.ordenarPor('media_num')">Média</button></li>
+            <li><button type="button" ng-click="vm.ordenarPor('jogos_num')">Jogos</button></li>
+        </ul>
+    </div>  
+</section>
+<section class="box-view box-view-atletas">
+    <div ng-repeat="item in vm.pagina" class="card card-jogador" ng-if="item.apelido">
+        <ul class="card-jogador-dados">
+            <li>
                 <figure><img class="img-clube" ng-src="{{vm.clubes | clubeEscudo : item.clube_id}}" /></figure>
                 <label ng-bind="item.clube"></label>
             </li>
-            <li class="card-jogador card-jogador-foto">
+            <li>
                 <figure>
                     <img class="img-jogador" ng-src="{{item.foto | atletaFoto}}" />
                 </figure>
-                <span class="jogador-nome" ng-bind="item.apelido"></span>
             </li>
-            <li class="card-jogador card-jogador-nome">
-                <span class="jogador-posicao" ng-bind="vm.posicoes | posicaoAbreviacao : item.posicao_id"></span>
+            <li class="jogador-nome">
+                <p class="jogador-apelido" ng-bind="item.apelido"></p>
+                <p class="jogador-posicao" ng-bind="vm.posicoes | posicaoNome : item.posicao_id"></p>
             </li>
-            <li class="card-jogador card-jogador-scouts">
-                <dl>
-                    <dt class="card-jogador-scouts-titulo">Jogos</dt>
-                    <dd class="card-jogador-scouts-valor" ng-bind="item.jogos_num"></dd>
-                    <dt>Média</dt>
-                    <dd ng-bind="item.media_num | number"></dd>
-                    <dt>Pontos</dt>
-                    <dd ng-bind="item.pontos_num | number"></dd>
-                    <dt>Preço</dt>
-                    <dd ng-bind="item.preco_num | currency"></dd>
-                    <dt>Variação</dt>
-                    <dd ng-bind="item.variacao_num | number"></dd>
-                </dl>
+            <li ng-switch="item.status_id">
+                <span ng-switch-when="2" class="fa fa-question status-jogador-duvida"></span>
+                <span ng-switch-when="3" class="icone-cartao-vermelho status-jogador-suspenso"></span>
+                <span ng-switch-when="5" class="fa fa-ambulance status-jogador-contundido"></span>
+                <span ng-switch-when="6" class="fa fa-minus"></span>
+                <span ng-switch-when="7" class="fa fa-check status-jogador-provavel"></span>
             </li>
+            <li ng-bind="item.preco_num | currency"></li>
+            <li ng-bind="item.variacao_num | currency"></li>
+            <li ng-bind="item.pontos_num | number"></li>
+            <li ng-bind="item.media_num | number"></li>
+            <li ng-bind="item.jogos_num"></li>
         </ul>
-    </section>
+    </div>
 </section>

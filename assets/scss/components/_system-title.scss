@@ -3,10 +3,9 @@
 .systemTitle
 {
     float: left;
-    width: $menu-width;
+    width: 140px;
     font-size: font-size(xxlarge);
     line-height: $header-height;
     font-weight: bold;
-    background-color: rgba(0,0,0,0.4);
-    text-align: center;
+    color: color(success);
 }

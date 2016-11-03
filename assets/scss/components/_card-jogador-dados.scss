@@ -1,0 +1,17 @@
+.card-jogador-dados
+{
+    display: table-row;
+
+    li
+    {
+        display: table-cell;
+        width: 10%;
+        text-align: center;
+        vertical-align: top;
+
+        &.jogador-nome
+        {
+            width: 17%;
+        }
+    }
+}

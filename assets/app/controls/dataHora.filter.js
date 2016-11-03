@@ -21,12 +21,9 @@
     {
         return function (obj)
         {
-            console.log(obj);
             var data = obj.toString().split(" ")[0].split("-");
             var hora = obj.toString().split(" ")[1];
-            console.log(data);
-            return data[2] + "/" + data[1] + "/" + data[0] + " " + hora.substring(0, 5); 
-            //return obj;
+            return data[2] + "/" + data[1] + "/" + data[0] + " " + hora.substring(0, 5);
         };
     }
 })();

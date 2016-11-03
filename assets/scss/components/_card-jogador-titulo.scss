@@ -1,0 +1,26 @@
+.card-jogador-titulo
+{
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: color(dark);
+    display: table-row;
+
+    li
+    {
+        display: table-cell;
+        width: 10%;
+        text-align: center;
+        padding-bottom: 5px;
+
+        &.jogador-nome
+        {
+            width: 17%;
+        }
+    }
+
+    button
+    {
+        text-transform: uppercase;
+    }
+}

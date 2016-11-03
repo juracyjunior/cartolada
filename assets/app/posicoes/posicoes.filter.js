@@ -8,7 +8,7 @@
     function posicaoAbreviacao(lista, id)
     {
         return function (lista, id) {
-            if (!lista || !id) return {};
+            if (!lista || !id) return "";
             return lista[id].abreviacao;
         };
     }
@@ -16,7 +16,7 @@
     function posicaoNome(lista, id)
     {
         return function (lista, id) {
-            if (!lista || !id) return {};
+            if (!lista || !id) return "";
             return lista[id].nome;
         };
     }
