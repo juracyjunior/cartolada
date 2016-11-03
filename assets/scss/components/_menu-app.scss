@@ -2,7 +2,7 @@
 
 .menu-app
 {
-    float: left;
+    display: inline-block;
 
     li
     {
@@ -22,7 +22,7 @@
 
             &:hover
             {
-                background-color: color(base);
+                color: color(success);
             }
 
             &.active

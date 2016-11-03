@@ -1,43 +1,27 @@
-<section class="box-view-atletas-filtros">
-    <dl>
-        <dt>Time</dt>
-        <dd>
-            <select ng-model="vm.clubeFiltro" ng-options="item as item.nome for item in vm.clubes track by item.id">
+<section class="box-view box-view-atletas-filtros">
+    <ul>
+        <li>
+            <label for="clubeFiltro">Time</label>       
+            <select id="clubeFiltro" ng-model="vm.clubeFiltro" ng-options="item as item.nome for item in vm.clubes track by item.id">
                 <option value="">Todos</option>
             </select>
-        </dd>
-        <dt>Posição</dt>
-        <dd>
-            <select ng-model="vm.posicaoFiltro" ng-options="item as item.nome for item in vm.posicoes track by item.id">
+        </li>
+        <li>
+            <label for="posicaoFiltro">Posição</label>
+            <select id="posicaoFiltro" ng-model="vm.posicaoFiltro" ng-options="item as item.nome for item in vm.posicoes track by item.id">
                 <option value="">Todos</option>
             </select>
-        </dd>
-        <dt>Status</dt>
-        <dd>
-            <select ng-model="vm.statusFiltro" ng-options="item as item.nome for item in vm.status track by item.id">
+        </li>
+        <li>
+            <label for="statusFiltro">Status</label>
+            <select id="statusFiltro" ng-model="vm.statusFiltro" ng-options="item as item.nome for item in vm.status track by item.id">
                 <option value="">Todos</option>
             </select>
-        </dd>
-        <!--dt>Ordenar por</dt>
-        <dd>
-            <select ng-model="vm.ordenarPor">
-                <option value="apelido">Nome</option>
-                <option value="media_num">Média</option>
-                <option value="pontos_num">Pontos</option>
-                <option value="preco_num">Preço</option>
-                <option value="variacao_num">Variação</option>
-            </select>
-        </dd>
-        <dt>Tipo ordem</dt>
-        <dd>
-            <select ng-model="vm.tipoOrdem">
-                <option value="0">Crescente</option>
-                <option value="1">Decrescente</option>
-            </select>
-        </dd-->
-    </dl>
-    <br/>
-    <button type="button" class="primary" ng-click="vm.filtrar()">Filtrar</button>
+        </li>
+        <li>
+            <button type="button" class="primary" ng-click="vm.filtrar()">Filtrar</button>
+        </li>
+    </ul>
 </section>
 <section class="box-view box-view-atletas">
     <div class="card-jogador">
