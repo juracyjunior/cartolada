@@ -16,16 +16,16 @@
                 <nav class="menu-app">
                     <ul>
                         <li>
-                            <a ui-sref="destaquesRodada" ui-sref-active="active">Destaques rodada</a>
+                            <a ui-sref="atletas" ui-sref-active="active">Mercado</a>
                         </li>
                         <li>
-                            <a ui-sref="destaquesMercado" ui-sref-active="active">Destaques mercado</a>
+                            <a ui-sref="destaquesMercado" ui-sref-active="active">Mais escalados #<span ng-bind="vm.data.rodada_atual"></span></a>
                         </li>
                         <li>
-                            <a ui-sref="proximaspartidas" ui-sref-active="active">Próximas partidas</a>
+                            <a ui-sref="proximaspartidas" ui-sref-active="active">Partidas #<span ng-bind="vm.data.rodada_atual"></span></a>
                         </li>
                         <li>
-                            <a ui-sref="atletas" ui-sref-active="active">Atletas</a>
+                            <a ui-sref="destaquesRodada" ui-sref-active="active">Destaques rodada #<span ng-bind="vm.data.rodada_atual - 1"></span></a>
                         </li>
                     </ul>
                 </nav>

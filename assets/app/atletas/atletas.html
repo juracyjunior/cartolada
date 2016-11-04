@@ -63,18 +63,18 @@
         </div>
     </section>
 </section>
-<section class="box-view box-view-atletas">
+<section class="box-view box-view-atletas-cabecalho">
     <div class="card-jogador">
         <ul class="card-jogador-titulo">
             <li>Time</li>
             <li></li>
             <li class="jogador-nome">Jogador</li>
             <li>Status</li>
-            <li><button type="button" ng-click="vm.ordenarPor('preco_num')">Preço</button></li>
-            <li><button type="button" ng-click="vm.ordenarPor('variacao_num')">Var. Preço</button></li>
-            <li><button type="button" ng-click="vm.ordenarPor('pontos_num')">Ult. Pontos</button></li>
-            <li><button type="button" ng-click="vm.ordenarPor('media_num')">Média</button></li>
-            <li><button type="button" ng-click="vm.ordenarPor('jogos_num')">Jogos</button></li>
+            <li><button type="button" ng-click="vm.ordenarPor('preco_num')"><i class="fa" ng-class="{'fa-chevron-down' : vm.ordemCrescente, 'fa-chevron-up' : !vm.ordemCrescente}" ng-show="vm.ordenarPorCampo === 'preco_num'"></i>Preço</button></li>
+            <li><button type="button" ng-click="vm.ordenarPor('variacao_num')"><i class="fa" ng-class="{'fa-chevron-down' : vm.ordemCrescente, 'fa-chevron-up' : !vm.ordemCrescente}" ng-show="vm.ordenarPorCampo === 'variacao_num'"></i>Var. Preço</button></li>
+            <li><button type="button" ng-click="vm.ordenarPor('pontos_num')"><i class="fa" ng-class="{'fa-chevron-down' : vm.ordemCrescente, 'fa-chevron-up' : !vm.ordemCrescente}" ng-show="vm.ordenarPorCampo === 'pontos_num'"></i>Ult. Pontos</button></li>
+            <li><button type="button" ng-click="vm.ordenarPor('media_num')"><i class="fa" ng-class="{'fa-chevron-down' : vm.ordemCrescente, 'fa-chevron-up' : !vm.ordemCrescente}" ng-show="vm.ordenarPorCampo === 'media_num'"></i>Média</button></li>
+            <li><button type="button" ng-click="vm.ordenarPor('jogos_num')"><i class="fa" ng-class="{'fa-chevron-down' : vm.ordemCrescente, 'fa-chevron-up' : !vm.ordemCrescente}" ng-show="vm.ordenarPorCampo === 'jogos_num'"></i>Jogos</button></li>
         </ul>
     </div>  
 </section>
@@ -108,4 +108,8 @@
             <li ng-bind="item.jogos_num"></li>
         </ul>
     </div>
+</section>
+<section class="paginacao">
+    <button type="button" ng-repeat="item in vm.paginacao()"
+        ng-click="vm.getItensPagina(item.index)" ng-bind="item.index"></button>
 </section>

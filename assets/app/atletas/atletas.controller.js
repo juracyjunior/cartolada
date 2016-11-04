@@ -15,9 +15,10 @@
         vm.atletas = [];
 
         vm.ordenarPorCampo = "media_num";
-        vm.tipoOrdem = true;
+        vm.ordemCrescente = true;
         vm.ordenarPor = ordenarPor;
 
+        vm.paginacao = paginacao;
         vm.pagina = [];
         vm.qtdPaginas = 0;
         vm.paginaAtual = 1;
@@ -25,6 +26,8 @@
 
         vm.filtrar = filtrar;
 
+        vm.clubeFiltro = "";
+        vm.posicaoFiltro = "";
         vm.statusFiltro = 7;
 
         init();
@@ -72,11 +75,11 @@
         {
             vm.atletasFiltrado = angular.copy(vm.atletas);
             console.log(vm.clubeFiltro);
-            if (vm.clubeFiltro && vm.clubeFiltro != "")
+            if (vm.clubeFiltro && vm.clubeFiltro !== "")
             {
                 vm.atletasFiltrado = vm.atletas.filterByField('clube_id', vm.clubeFiltro);
             }
-            if (vm.posicaoFiltro && vm.posicaoFiltro != "")
+            if (vm.posicaoFiltro && vm.posicaoFiltro !== "")
             {
                 if (vm.atletasFiltrado){
                     vm.atletasFiltrado = vm.atletasFiltrado.filterByField('posicao_id', vm.posicaoFiltro);
@@ -84,7 +87,7 @@
                     vm.atletasFiltrado = vm.atletas.filterByField('posicao_id', vm.posicaoFiltro);
                 }
             }
-            if (vm.statusFiltro && vm.statusFiltro != "")
+            if (vm.statusFiltro && vm.statusFiltro !== "")
             {
                 if (vm.atletasFiltrado){
                     vm.atletasFiltrado = vm.atletasFiltrado.filterByField('status_id', vm.statusFiltro);
@@ -100,9 +103,9 @@
         function ordenarPor(ordem)
         {
             if (vm.ordenarPorCampo !== ordem) {
-                vm.tipoOrdem = true;
+                vm.ordemCrescente = true;
             } else {
-                vm.tipoOrdem = !vm.tipoOrdem;
+                vm.ordemCrescente = !vm.ordemCrescente;
             }
             vm.ordenarPorCampo = ordem;
             filtrar();
@@ -110,7 +113,17 @@
 
         function ordenar()
         {
-            vm.atletasFiltrado = orderBy(vm.atletasFiltrado, vm.ordenarPorCampo, vm.tipoOrdem);
+            vm.atletasFiltrado = orderBy(vm.atletasFiltrado, vm.ordenarPorCampo, vm.ordemCrescente);
+        }
+
+        function paginacao()
+        {
+            var paginas = [];
+            /*for(var i = 1; i <= vm.qtdPaginas; i++)
+            {
+                paginas.push({index: i});
+            }*/
+            return paginas;
         }
     }
 })();

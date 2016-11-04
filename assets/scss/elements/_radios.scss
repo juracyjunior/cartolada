@@ -7,6 +7,8 @@ input[type="radio"]
     top: $top + 1;
     left: $left + 1;
 
+    display: none;
+
     margin: 0;
 
     & + label {
@@ -19,11 +21,11 @@ input[type="radio"]
         margin: 0;
 
         &:before {
-            @include generated-content($size, $size);
+            @include generated-content($size - 3, $size - 3);
 
             position: absolute;
-            top: $top + 1;
-            left: $left;
+            top: $top + 4;
+            left: $left + 1;
 
             background-color: color(light);
             border-radius: 50%;
@@ -31,15 +33,14 @@ input[type="radio"]
         }
 
         &:after {
-            @include generated-content($size - 4, $size - 4);
+            @include generated-content($size - 7, $size - 7);
 
             position: absolute;
-            top: $top + 4;
-            left: $left + 3;
+            top: $top + 7;
+            left: $left + 4;
 
             display: none;
 
-            //font-size: $size - 3;
             background-color: color(primary);
             border-radius: 50%;
         }

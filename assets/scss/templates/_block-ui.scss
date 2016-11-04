@@ -1,0 +1,14 @@
+.block-ui-overlay
+{
+    background-color: color(dark);
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+}
+
+.block-ui-message
+{
+    background-color: color(success);
+    color: color(light);
+    font-size: font-size(small);
+    padding: 10px;
+}

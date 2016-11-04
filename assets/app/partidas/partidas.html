@@ -8,9 +8,9 @@
                         class="aproveitamento-time {{aproveitamento}}"></span>
                 </label>
             </li>
-            <li class="placar" ng-bind="item.placar_oficial_mandante"></li>
+            <li class="placar" ng-bind="item.placar_oficial_mandante || 0"></li>
             <li class="vs">X</li>
-            <li class="placar" ng-bind="item.placar_oficial_visitante"></li>
+            <li class="placar" ng-bind="item.placar_oficial_visitante || 0"></li>
             <li class="time-partida visitante">
                 <figure><img class="img-clube" src="{{vm.data.clubes | clubeEscudo : item.clube_visitante_id}}" /></figure>
                 <label>
