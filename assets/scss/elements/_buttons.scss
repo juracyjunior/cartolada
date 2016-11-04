@@ -6,6 +6,8 @@ button
     cursor: pointer;
     padding: 2px 6px;
     border-radius: $border-radius-default;
+    text-transform: uppercase;
+    font-size: font-size(smaller);
 
     &:hover
     {

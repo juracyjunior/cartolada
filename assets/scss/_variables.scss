@@ -3,17 +3,18 @@
 /// Colors map to system
 /// @group   Color
 $colors: (
-	light       : #fff,
-	base        : #f3f3f3,
-  primary     : #1E90FF,
-  primary-dark: #1275E7, 
-  danger      : #DC143C,
-	success     : #00b136,
-  warning     : #FFC144,
-  info        : #5bc0de,
-	dark-lighter: #EBEBEB,
-	dark-light  : #777,
-  dark        : #000
+	light        : #fff,
+	base         : #f3f3f3,
+  primary      : #1E90FF,
+  primary-dark : #1275E7, 
+  danger       : #DC143C,
+	success      : #00b136,
+  warning      : #FFC144,
+  info         : #5bc0de,
+	dark-lighter : #EBEBEB,
+  dark-lightest: #dddddd,
+	dark-light   : #777,
+  dark         : #000
 ) !default;
 
 /// Fonts map to system

@@ -1,27 +1,67 @@
 <section class="box-view box-view-atletas-filtros">
-    <ul>
-        <li>
-            <label for="clubeFiltro">Time</label>       
-            <select id="clubeFiltro" ng-model="vm.clubeFiltro" ng-options="item as item.nome for item in vm.clubes track by item.id">
-                <option value="">Todos</option>
-            </select>
-        </li>
-        <li>
-            <label for="posicaoFiltro">Posição</label>
-            <select id="posicaoFiltro" ng-model="vm.posicaoFiltro" ng-options="item as item.nome for item in vm.posicoes track by item.id">
-                <option value="">Todos</option>
-            </select>
-        </li>
-        <li>
-            <label for="statusFiltro">Status</label>
-            <select id="statusFiltro" ng-model="vm.statusFiltro" ng-options="item as item.nome for item in vm.status track by item.id">
-                <option value="">Todos</option>
-            </select>
-        </li>
-        <li>
+    <div class="box-view-atletas-filtros-cabecalho">
+        <button type="button" class="link" ng-click="vm.mostraFiltros = !vm.mostraFiltros">
+            Filtros
+            <i class="fa" ng-class="{'fa-chevron-down' : !vm.mostraFiltros, 'fa-chevron-up' : vm.mostraFiltros}"></i>
+        </button>
+    </div>    
+
+    <section class="box-view-atletas-filtros-conteudo" ng-show="vm.mostraFiltros">
+        <div class="atletas-filtro-coluna atletas-filtro-coluna-times">
+            <label class="field-title">Times</label>
+            <ul class="container-radio times-opcao-radio">
+                <li>
+                    <input type="radio" id="clubeFiltro0" ng-model="vm.clubeFiltro" value="" />
+                    <label for="clubeFiltro0">
+                        <figure class="time-opcao-todos-figure">
+                            <figcaption>TODOS</figcaption>
+                        </figure>
+                    </label>
+                </li>
+                <li ng-repeat="item in vm.clubes">
+                    <input type="radio" id="clubeFiltro{{item.id}}" ng-model="vm.clubeFiltro" ng-value="item.id" />
+                    <label for="clubeFiltro{{item.id}}">
+                        <figure>
+                            <img class="img-clube" ng-src="{{vm.clubes | clubeEscudo : item.id}}" />
+                            <figcaption ng-bind="item.abreviacao"></figcaption>
+                        </figure>
+                    </label>
+                </li>
+            </ul>
+        </div>
+
+        <div class="atletas-filtro-coluna">
+            <label class="field-title">Posição</label>
+            <ul class="container-radio">
+                <li>
+                    <input type="radio" id="posicaoFiltro0" ng-model="vm.posicaoFiltro" value="" />
+                    <label for="posicaoFiltro0">TODOS</label>
+                </li>
+                <li ng-repeat="item in vm.posicoes">
+                    <input type="radio" id="posicaoFiltro{{item.id}}" ng-model="vm.posicaoFiltro" ng-value="item.id" />
+                    <label for="posicaoFiltro{{item.id}}" ng-bind="item.nome"></label>
+                </li>
+            </ul>
+        </div>
+
+        <div class="atletas-filtro-coluna">
+            <label class="field-title">Status</label>
+            <ul class="container-radio">
+                <li>
+                    <input type="radio" id="statusFiltro0" ng-model="vm.statusFiltro" value="" />
+                    <label for="statusFiltro0">TODOS</label>
+                </li>
+                <li ng-repeat="item in vm.status">
+                    <input type="radio" id="statusFiltro{{item.id}}" ng-model="vm.statusFiltro" ng-value="item.id" />
+                    <label for="statusFiltro{{item.id}}" ng-bind="item.nome"></label>
+                </li>
+            </ul>
+        </div>
+    
+        <div class="botoes-acoes">
             <button type="button" class="primary" ng-click="vm.filtrar()">Filtrar</button>
-        </li>
-    </ul>
+        </div>
+    </section>
 </section>
 <section class="box-view box-view-atletas">
     <div class="card-jogador">

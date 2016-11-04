@@ -16,6 +16,7 @@
 @import './elements/body';
 @import './elements/header';
 @import './elements/buttons';
+@import './elements/radios';
 
 @import './components/aproveitamento-time';
 @import './components/box-title';
@@ -49,3 +50,12 @@
 @import './components/box-view-atletas-filtros';
 @import './components/jogador-apelido';
 @import './components/jogador-posicao';
+@import './components/container-radio';
+@import './components/times-opcao-radio';
+@import './components/time-opcao-todos-figure';
+@import './components/atletas-filtro-coluna';
+@import './components/atletas-filtro-coluna-times';
+@import './components/field-title';
+@import './components/botoes-acoes';
+@import './components/box-view-atletas-filtros-cabecalho';
+@import './components/box-view-atletas-filtros-conteudo';

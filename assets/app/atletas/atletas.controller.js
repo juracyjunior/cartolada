@@ -25,7 +25,7 @@
 
         vm.filtrar = filtrar;
 
-        vm.statusFiltro = { id: 7 };   
+        vm.statusFiltro = 7;
 
         init();
 
@@ -44,7 +44,7 @@
             vm.posicoes = vm.data.posicoes;
             vm.clubes = vm.data.clubes;
             vm.status = vm.data.status;
-            console.log(vm.status);
+            console.log(vm.clubes);
             vm.atletas = vm.data.atletas;
             filtrar();
         }
@@ -66,30 +66,30 @@
                     vm.pagina = [];
                 vm.pagina.push(vm.atletasFiltrado[i]);
             }
-            console.log(vm.pagina);
         }
 
         function filtrar()
         {
             vm.atletasFiltrado = angular.copy(vm.atletas);
-            if (vm.clubeFiltro)
+            console.log(vm.clubeFiltro);
+            if (vm.clubeFiltro && vm.clubeFiltro != "")
             {
-                vm.atletasFiltrado = vm.atletas.filterByField('clube_id', vm.clubeFiltro.id);
+                vm.atletasFiltrado = vm.atletas.filterByField('clube_id', vm.clubeFiltro);
             }
-            if (vm.posicaoFiltro)
+            if (vm.posicaoFiltro && vm.posicaoFiltro != "")
             {
                 if (vm.atletasFiltrado){
-                    vm.atletasFiltrado = vm.atletasFiltrado.filterByField('posicao_id', vm.posicaoFiltro.id);
+                    vm.atletasFiltrado = vm.atletasFiltrado.filterByField('posicao_id', vm.posicaoFiltro);
                 } else {
-                    vm.atletasFiltrado = vm.atletas.filterByField('posicao_id', vm.posicaoFiltro.id);
+                    vm.atletasFiltrado = vm.atletas.filterByField('posicao_id', vm.posicaoFiltro);
                 }
             }
-            if (vm.statusFiltro)
+            if (vm.statusFiltro && vm.statusFiltro != "")
             {
                 if (vm.atletasFiltrado){
-                    vm.atletasFiltrado = vm.atletasFiltrado.filterByField('status_id', vm.statusFiltro.id);
+                    vm.atletasFiltrado = vm.atletasFiltrado.filterByField('status_id', vm.statusFiltro);
                 } else {
-                    vm.atletasFiltrado = vm.atletas.filterByField('status_id', vm.statusFiltro.id);
+                    vm.atletasFiltrado = vm.atletas.filterByField('status_id', vm.statusFiltro);
                 }
             }
             ordenar();

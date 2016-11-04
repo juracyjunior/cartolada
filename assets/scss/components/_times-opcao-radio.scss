@@ -1,0 +1,43 @@
+.times-opcao-radio
+{
+    li
+    {
+        position: relative;
+        display: inline-flex;
+        padding: 0px 5.8px;
+        padding-bottom: 10px;
+
+        input[type="radio"] 
+        {
+            display: none;
+
+            & + label
+            {
+                padding-left: 0px;
+
+                &:before 
+                {
+                    top: 19px;
+                    left: 25px;
+                    border: 1px solid color(dark-light);
+                }
+
+                &:after 
+                {
+                    top: 22px;
+                    left: 28px;
+                }
+            }
+        }
+
+        figure
+        {
+            text-align: center;
+
+            figcaption
+            {
+                font-size: font-size(smaller);
+            }
+        }
+    }
+}
