@@ -47,7 +47,6 @@
             vm.posicoes = vm.data.posicoes;
             vm.clubes = vm.data.clubes;
             vm.status = vm.data.status;
-            console.log(vm.clubes);
             vm.atletas = vm.data.atletas;
             filtrar();
         }
@@ -74,7 +73,6 @@
         function filtrar()
         {
             vm.atletasFiltrado = angular.copy(vm.atletas);
-            console.log(vm.clubeFiltro);
             if (vm.clubeFiltro && vm.clubeFiltro !== "")
             {
                 vm.atletasFiltrado = vm.atletas.filterByField('clube_id', vm.clubeFiltro);

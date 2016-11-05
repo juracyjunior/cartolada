@@ -83,7 +83,7 @@
         <ul class="card-jogador-dados">
             <li>
                 <figure><img class="img-clube" ng-src="{{vm.clubes | clubeEscudo : item.clube_id}}" /></figure>
-                <label ng-bind="item.clube"></label>
+                <label ng-bind="(vm.clubes | clube : item.clube_id).abreviacao"></label>
             </li>
             <li>
                 <figure>

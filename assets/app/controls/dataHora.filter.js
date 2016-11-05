@@ -17,13 +17,16 @@
         };
     }
 
+    var semana = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sab'];
+
     function dataHoraSrt(obj)
     {
         return function (obj)
         {
             var data = obj.toString().split(" ")[0].split("-");
             var hora = obj.toString().split(" ")[1];
-            return data[2] + "/" + data[1] + "/" + data[0] + " " + hora.substring(0, 5);
+            var dataObj = new Date(data);            
+            return semana[dataObj.getDay()] + " " + dataObj.getDate().toString().lpad(2, "0") + "/" + (dataObj.getMonth() + 1).toString().lpad(2, "0") + " " + hora.substring(0, 5);
         };
     }
 })();
