@@ -52,6 +52,13 @@
                 title: "paginas.atletas",
                 controller: "atletasController",
                 templateUrl: "atletas/atletas.html"
+            },
+            {
+                state: "login",
+                url: "/login",
+                title: "Login",
+                //controller: "atletasController",
+                templateUrl: "login-globo/login-globo.html"
             }
         ];
     }
