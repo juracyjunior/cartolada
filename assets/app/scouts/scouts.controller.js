@@ -2,20 +2,19 @@
     "use strict";
 
     angular.module("app").
-        controller("atletasController", ["atletasService", "apiService", "orderByFilter", atletasController]);
+        controller("scoutsController", ["atletasService", "apiService", "orderByFilter", scoutsController]);
 
-    function atletasController(atletasService, apiService, orderBy)
+    function scoutsController(atletasService, apiService, orderBy)
     {
         /*jshint validthis:true*/
         var vm = this;
-        
+
         vm.posicoes = [];
         vm.clubes = [];
-        vm.status = [];
         vm.atletas = [];
 
-        vm.ordenarPorCampo = "media_num";
-        vm.ordemCrescente = true;
+        vm.ordenarPorCampo = "pontuacao";
+        vm.ordemCrescente = false;
         vm.ordenarPor = ordenarPor;
 
         vm.paginacao = paginacao;
@@ -26,19 +25,19 @@
 
         vm.filtrar = filtrar;
 
-        vm.clubeFiltro = "";
+        /*vm.clubeFiltro = "";
         vm.posicaoFiltro = "";
-        vm.statusFiltro = 7;
+        vm.statusFiltro = 7;*/
 
         init();
 
         function init(){
-            getAtletas();
+            getScouts();
         }
 
-        function getAtletas()
+        function getScouts()
         {
-            atletasService.getMercado().then(onSuccess, apiService.handleResponse);
+            atletasService.getScouts().then(onSuccess, apiService.handleResponse);
         }
 
         function onSuccess(response)
@@ -46,8 +45,12 @@
             vm.data = response.data;
             vm.posicoes = vm.data.posicoes;
             vm.clubes = vm.data.clubes;
-            vm.status = vm.data.status;
-            vm.atletas = vm.data.atletas;
+
+            for (var a in vm.data.atletas) {
+                vm.atletas.push(vm.data.atletas[a]);
+            }
+
+            //vm.atletas = vm.data.atletas;
             console.log(vm.data);
             filtrar();
         }
@@ -55,7 +58,7 @@
         function filtrar()
         {
             vm.atletasFiltrado = angular.copy(vm.atletas);
-            if (vm.clubeFiltro && vm.clubeFiltro !== "")
+            /*if (vm.clubeFiltro && vm.clubeFiltro !== "")
             {
                 vm.atletasFiltrado = vm.atletas.filterByField('clube_id', vm.clubeFiltro);
             }
@@ -74,7 +77,7 @@
                 } else {
                     vm.atletasFiltrado = vm.atletas.filterByField('status_id', vm.statusFiltro);
                 }
-            }
+            }*/
             ordenar();
             vm.qtdPaginas = Math.round(vm.atletasFiltrado.length / tamanhoPagina) + 1;
             getItensPagina(vm.paginaAtual);

@@ -54,6 +54,13 @@
                 templateUrl: "atletas/atletas.html"
             },
             {
+                state: "scouts",
+                url: "/scouts",
+                title: "paginas.scouts",
+                controller: "scoutsController",
+                templateUrl: "scouts/scouts.html"
+            },
+            {
                 state: "login",
                 url: "/login",
                 title: "Login",
