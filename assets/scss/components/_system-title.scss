@@ -3,9 +3,11 @@
 .systemTitle
 {
     float: left;
-    width: 140px;
+    padding-left: 20px;
+    width: 172px;
     font-size: font-size(xxlarge);
-    line-height: $header-height;
+    line-height: $header-height - 1;
     font-weight: bold;
-    color: color(success);
+    color: color(light);
+    background-color: color(warning);
 }

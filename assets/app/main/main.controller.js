@@ -9,10 +9,13 @@
         /*jshint validthis:true*/
         var vm = this;
 
+        vm.loginGlobo = loginGlobo;
+
         init();
 
         function init(){
             getStatusMercado();
+            //Cadun = {};
         }
 
         function getStatusMercado()
@@ -23,6 +26,19 @@
         function onSuccess(response)
         {
             vm.data = response.data;
+        }
+
+        function loginGlobo()
+        {
+            Cadun.authorize(438, function(user) {
+                if (user.status == 'authorized') {
+                    window.location.href = self.homeLogadaUrl;
+                } else {
+                    Cadun.login(438, location.href, false, function(data) {
+                        window.location.href = self.homeLogadaUrl;
+                    });
+                }
+            });
         }
     }
 })();

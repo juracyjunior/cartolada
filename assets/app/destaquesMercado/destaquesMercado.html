@@ -1,21 +1,20 @@
-<section class="box-view">
-    <h3 class="box-title">Jogadores mais escalados</h3>
-    <section ng-repeat="item in vm.data" class="card">
-        <ul>
-            <li class="card-jogador-destaque card-jogador-clube">
-                <figure><img class="img-clube" src="{{item.escudo_clube}}" /></figure>
+<section class="box-view box-view-atletas">
+    <div ng-repeat="item in vm.data" class="card card-jogador">
+        <ul class="card-jogador-dados">
+            <li class="jogador-clube">
+                <figure><img class="img-clube" ng-src="{{item.escudo_clube}}" /></figure>
                 <label ng-bind="item.clube"></label>
             </li>
-            <li class="card-jogador-destaque card-jogador-foto">
+            <li class="jogador-foto">
                 <figure>
-                    <img class="img-jogador" src="{{item.Atleta.foto.replace('FORMATO','140x140')}}" />
+                    <img class="img-jogador" ng-src="{{item.Atleta.foto | atletaFoto}}" />
                 </figure>
             </li>
-            <li class="card-jogador-destaque card-jogador-nome">
-                <label class="jogador-nome" ng-bind="item.Atleta.apelido"></label>
-                <label class="jogador-posicao" ng-bind="item.posicao"></label>
+            <li class="jogador-nome">
+                <p class="jogador-apelido" ng-bind="item.Atleta.apelido"></p>
+                <p class="jogador-posicao" ng-bind="item.posicao"></p>
             </li>
-            <li class="card-jogador-destaque card-jogador-escalacoes" ng-bind="item.escalacoes | number:0"></li>
+            <li class="jogador-escalacoes" ng-bind="item.escalacoes | number:0"></li>
         </ul>
-    </section>
+    </div>
 </section>

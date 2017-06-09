@@ -1,0 +1,11 @@
+.time-opcao-todos-figure
+{
+    &:before
+    {
+        @include generated-content(30px, 33px);
+
+        background-color: color(light);
+        border-radius: 50%;
+        border: 1px solid color(dark-lightest);
+    }
+}

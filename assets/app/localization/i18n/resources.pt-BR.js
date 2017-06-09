@@ -20,8 +20,10 @@
         paginas:{
             home: "Home",
             destaquesrodada: "Destaques rodada",
-            destaquesmercado: "Destaques mercado",
-            proximaspartidas: "Próximas partidas"
+            destaquesmercado: "Mais escalados",
+            proximaspartidas: "Próximas partidas",
+            atletas: "Mercado",
+            scouts: "Scouts"
         },
         moeda: {
             simbolo: "R$",

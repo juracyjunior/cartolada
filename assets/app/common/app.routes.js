@@ -6,7 +6,7 @@
 
     function routeConfigurator($stateProvider, $urlRouterProvider)
     {
-        $urlRouterProvider.otherwise("/home");
+        $urlRouterProvider.otherwise("/mercado");
 
         var routes = getRoutes();
         
@@ -26,13 +26,6 @@
                 title: "paginas.home"
             },
             {
-                state: "statusmercado",
-                url: "/status-mercado",
-                title: "paginas.statusmercado",
-                controller: "statusMercadoController",
-                templateUrl: "statusMercado/statusMercado.html"
-            },
-            {
                 state: "destaquesMercado",
                 url: "/destaques-mercado",
                 title: "paginas.destaquesmercado",
@@ -48,17 +41,31 @@
             },
             {
                 state: "proximaspartidas",
-                url: "/proximas-partidas",
+                url: "/partidas",
                 title: "paginas.proximaspartidas",
                 controller: "partidasController",
                 templateUrl: "partidas/partidas.html"
             },
             {
                 state: "atletas",
-                url: "/atletas",
+                url: "/mercado",
                 title: "paginas.atletas",
                 controller: "atletasController",
                 templateUrl: "atletas/atletas.html"
+            },
+            {
+                state: "scouts",
+                url: "/scouts",
+                title: "paginas.scouts",
+                controller: "scoutsController",
+                templateUrl: "scouts/scouts.html"
+            },
+            {
+                state: "login",
+                url: "/login",
+                title: "Login",
+                //controller: "atletasController",
+                templateUrl: "login-globo/login-globo.html"
             }
         ];
     }

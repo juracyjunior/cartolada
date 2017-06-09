@@ -1,0 +1,11 @@
+@charset 'UTF-8';
+
+.featureTitle
+{
+    float: left;
+    padding-left: 10px;
+    font-size: font-size(xxlarge);
+    line-height: $header-height - 1;
+    font-weight: normal;
+    text-transform: uppercase;
+}

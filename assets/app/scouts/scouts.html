@@ -1,0 +1,50 @@
+<section class="box-view box-view-atletas-cabecalho">
+    <div class="card-jogador">
+        <ul class="card-jogador-titulo">
+            <li>Time</li>
+            <li class="jogador-nome">Jogador</li>
+            <li></li>
+            <li>Status</li>
+            <li><button type="button" ng-click="vm.ordenarPor('preco_num')"><i class="fa" ng-class="{'fa-chevron-down' : vm.ordemCrescente, 'fa-chevron-up' : !vm.ordemCrescente}" ng-show="vm.ordenarPorCampo === 'preco_num'"></i>Preço</button></li>
+            <li><button type="button" ng-click="vm.ordenarPor('variacao_num')"><i class="fa" ng-class="{'fa-chevron-down' : vm.ordemCrescente, 'fa-chevron-up' : !vm.ordemCrescente}" ng-show="vm.ordenarPorCampo === 'variacao_num'"></i>Var. Preço</button></li>
+            <li><button type="button" ng-click="vm.ordenarPor('pontos_num')"><i class="fa" ng-class="{'fa-chevron-down' : vm.ordemCrescente, 'fa-chevron-up' : !vm.ordemCrescente}" ng-show="vm.ordenarPorCampo === 'pontos_num'"></i>Ult. Pontos</button></li>
+            <li><button type="button" ng-click="vm.ordenarPor('media_num')"><i class="fa" ng-class="{'fa-chevron-down' : vm.ordemCrescente, 'fa-chevron-up' : !vm.ordemCrescente}" ng-show="vm.ordenarPorCampo === 'media_num'"></i>Média</button></li>
+            <li><button type="button" ng-click="vm.ordenarPor('jogos_num')"><i class="fa" ng-class="{'fa-chevron-down' : vm.ordemCrescente, 'fa-chevron-up' : !vm.ordemCrescente}" ng-show="vm.ordenarPorCampo === 'jogos_num'"></i>Jogos</button></li>
+        </ul>
+    </div>  
+</section>
+<section class="box-view box-view-atletas">
+    <div ng-repeat="item in vm.pagina" class="card card-jogador" ng-if="item.apelido">
+        <ul class="card-jogador-dados">
+            <li>
+                <figure><img class="img-clube" ng-src="{{vm.clubes | clubeEscudo : item.clube_id}}" /></figure>
+                <label ng-bind="(vm.clubes | clube : item.clube_id).abreviacao"></label>
+            </li>
+            <li>
+                <figure>
+                    <img class="img-jogador" ng-src="{{item.foto | atletaFoto}}" />
+                </figure>
+            </li>
+            <li class="jogador-nome">
+                <p class="jogador-apelido" ng-bind="item.apelido"></p>
+                <p class="jogador-posicao" ng-bind="vm.posicoes | posicaoNome : item.posicao_id"></p>
+            </li>
+            <li ng-switch="item.status_id">
+                <span ng-switch-when="2" class="fa fa-question status-jogador-duvida"></span>
+                <span ng-switch-when="3" class="icone-cartao-vermelho status-jogador-suspenso"></span>
+                <span ng-switch-when="5" class="fa fa-ambulance status-jogador-contundido"></span>
+                <span ng-switch-when="6" class="fa fa-minus"></span>
+                <span ng-switch-when="7" class="fa fa-check status-jogador-provavel"></span>
+            </li>
+            <li ng-bind="item.preco_num | currency"></li>
+            <li ng-bind="item.variacao_num | currency"></li>
+            <li ng-bind="item.pontos_num | number"></li>
+            <li ng-bind="item.media_num | number"></li>
+            <li ng-bind="item.jogos_num"></li>
+        </ul>
+    </div>
+</section>
+<section class="paginacao">
+    <button type="button" ng-repeat="item in vm.paginacao()"
+        ng-click="vm.getItensPagina(item.index)" ng-bind="item.index"></button>
+</section>

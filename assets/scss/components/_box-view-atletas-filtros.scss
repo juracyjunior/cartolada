@@ -1,14 +1,16 @@
 .box-view-atletas-filtros
 {
     margin-bottom: 10px;
+    padding-bottom: 8px;
+    padding-top: 5px;
     width: 100%;
-    text-align: right;
+    text-align: left;
 
-    li
+    ul
     {
-        display: inline-block;
+        //display: inline-block;
 
-        & + li
+        & + ul
         {
             margin-left: 20px;
         }

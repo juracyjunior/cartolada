@@ -5,9 +5,9 @@
     background-color: color(light);
     color: color(dark-light);
     border-radius: $border-radius-default;
-    padding: $space-default ($space-default + 10px);
-    box-shadow: $box-shadow-default;
-    width: 520px;
+    padding: ($space-default + 10px) ($space-default + 10px);
+    //box-shadow: $box-shadow-default;
+    //width: 520px;
     text-align: center;
     margin: 0 auto;
 }

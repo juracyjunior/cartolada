@@ -16,6 +16,8 @@
 @import './elements/body';
 @import './elements/header';
 @import './elements/buttons';
+@import './elements/radios';
+@import './elements/iframe';
 
 @import './components/aproveitamento-time';
 @import './components/box-title';
@@ -33,13 +35,14 @@
 @import './components/card-jogador-clube';
 @import './components/card-jogador-foto';
 @import './components/card-jogador-nome';
-@import './components/card-jogador-escalacoes';
 @import './components/card-jogador-titulo';
 @import './components/card-jogador-dados';
 @import './components/card-partida';
 @import './components/content';
+@import './components/destaque-ordem';
 @import './components/destaques-rodada-media';
 @import './components/destaques-rodada-mitou';
+@import './components/feature-title';
 @import './components/menu-app';
 @import './components/status-mercado';
 @import './components/system-title';
@@ -50,3 +53,15 @@
 @import './components/box-view-atletas-filtros';
 @import './components/jogador-apelido';
 @import './components/jogador-posicao';
+@import './components/container-radio';
+@import './components/times-opcao-radio';
+@import './components/time-opcao-todos-figure';
+@import './components/atletas-filtro-coluna';
+@import './components/atletas-filtro-coluna-times';
+@import './components/field-title';
+@import './components/botoes-acoes';
+@import './components/box-view-atletas-filtros-cabecalho';
+@import './components/box-view-atletas-filtros-conteudo';
+@import './components/box-view-atletas-cabecalho';
+
+@import './templates/block-ui';

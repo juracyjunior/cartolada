@@ -8,7 +8,8 @@
         return {
             getAllPosicoes: getAllPosicoes,
             getAllStatus: getAllStatus,
-            get: get
+            getMercado: getMercado,
+            getScouts: getScouts
         };
 
         function getAllPosicoes()
@@ -21,9 +22,14 @@
             return apiService.getLocal("json/status.json");
         }
 
-        function get()
+        function getMercado()
         {
             return apiService.get("atletas/mercado");
+        }
+
+        function getScouts()
+        {
+            return apiService.get("atletas/pontuados");
         }
     }
 })();
