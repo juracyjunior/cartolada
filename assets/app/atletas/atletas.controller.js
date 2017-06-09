@@ -44,7 +44,6 @@
             vm.posicoes = vm.data.posicoes;
             vm.clubes = vm.data.clubes;
             vm.status = vm.data.status;
-            console.log(vm.status);
             vm.atletas = vm.data.atletas;
             filtrar();
         }
@@ -66,7 +65,6 @@
                     vm.pagina = [];
                 vm.pagina.push(vm.atletasFiltrado[i]);
             }
-            console.log(vm.pagina);
         }
 
         function filtrar()

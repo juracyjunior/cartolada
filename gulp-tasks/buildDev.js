@@ -3,7 +3,7 @@
 let gulp = require("gulp");
 let runSequence = require("run-sequence");
 
-gulp.task("build:dev", function() {
+gulp.task("default", function() {
     runSequence(
         "clean",
         [

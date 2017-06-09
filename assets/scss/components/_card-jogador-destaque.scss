@@ -1,0 +1,11 @@
+@charset 'UTF-8';
+
+$space-card: 5px;
+
+.card-jogador-destaque
+{
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 $space-card;
+    white-space: nowrap;
+}

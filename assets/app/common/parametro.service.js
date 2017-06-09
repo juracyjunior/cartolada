@@ -8,7 +8,7 @@
     {
         var params = {
             "baseUrl": { "value": "/json/" },
-            "baseUrlBackEnd": {"value" : "http://localhost:3000/" },
+            "baseUrlBackEnd": {"value" : "http://api-jj.jelasticlw.com.br/" },
             "systemTitle": { "value": "Cartolada" },
             "systemSubtitle": { "value": "O portal que ajudar a mitar no Cartola FC" }
         };
