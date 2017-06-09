@@ -15,7 +15,7 @@ let sassOptions = {
 };
 
 gulp.task("sass", function() {
-	console.log("sass");
+		console.log("sass");
     return gulp.src(config.sourceCSS)
 		.pipe(sourcemaps.init())
 		.pipe(sass(sassOptions).on("error", onError))
