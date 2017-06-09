@@ -17,15 +17,15 @@
 
                 &:before 
                 {
-                    top: 19px;
-                    left: 25px;
+                    top: 40px;
+                    left: 17px;
                     border: 1px solid color(dark-light);
                 }
 
                 &:after 
                 {
-                    top: 22px;
-                    left: 28px;
+                    top: 43px;
+                    left: 20px;
                 }
             }
         }
@@ -36,6 +36,7 @@
 
             figcaption
             {
+                margin-top: 15px;
                 font-size: font-size(smaller);
             }
         }

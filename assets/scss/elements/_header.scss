@@ -8,7 +8,6 @@ header
     left: 0;
     height: $header-height;
     background-color: color(light);
-    color: color(light);
     z-index: 10;
-    border-bottom: 1px solid color(success);
+    border-bottom: 1px solid color(base);
 }

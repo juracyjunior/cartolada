@@ -13,48 +13,47 @@
     </head>
     <body>
         <header>
-            <div class="content">
-                <h1 class="systemTitle" ng-bind="$page.systemTitle"></h1>
-                <nav class="menu-app">
-                    <ul>
-                        <li>
-                            <a ui-sref="atletas" ui-sref-active="active">Mercado</a>
-                        </li>
-                        <li>
-                            <a ui-sref="destaquesMercado" ui-sref-active="active">Mais escalados #<span ng-bind="vm.data.rodada_atual"></span></a>
-                        </li>
-                        <li>
-                            <a ui-sref="proximaspartidas" ui-sref-active="active">Partidas #<span ng-bind="vm.data.rodada_atual"></span></a>
-                        </li>
-                        <li>
-                            <a ui-sref="scouts" ui-sref-active="active">Scouts #<span ng-bind="vm.data.rodada_atual"></span></a>
-                        </li>
-                        <li>
-                            <a ui-sref="destaquesRodada" ui-sref-active="active">Destaques rodada #<span ng-bind="vm.data.rodada_atual - 1"></span></a>
-                        </li>
-                    </ul>
-                </nav>
-                <section class="status-mercado">
-                    <dl class="info-mercado">
-                        <dt class="fechado" ng-if="vm.data.status_mercado === 3">
-                            MERCADO EM ATUALIZAÇÃO
-                        </dt>
-                        <dt class="fechado" ng-if="vm.data.status_mercado === 2">
-                            MERCADO FECHADO
-                        </dt>
-                        <dt class="aberto" ng-if="vm.data.status_mercado === 1">
-                            MERCADO ABERTO
-                        </dt>
-                        <dd ng-if="vm.data.status_mercado === 1">
-                            até <span ng-bind="vm.data.fechamento | dataHora"></span>
-                        </dd>
-                        <dd class="rodada-atual" ng-bind="'Rodada #' + vm.data.rodada_atual"></dd>
-                    </dl>
-                </section>
-            </div>
+            <h1 class="systemTitle" ng-bind="$page.systemTitle"></h1>
+            <h2 class="featureTitle" ng-bind="$page.title"></h2>
+            <aside class="status-mercado">
+                <ul class="info-mercado">
+                    <li class="fechado" ng-if="vm.data.status_mercado === 3">
+                        MERCADO EM ATUALIZAÇÃO
+                    </li>
+                    <li class="fechado" ng-if="vm.data.status_mercado === 2">
+                        MERCADO FECHADO
+                    </li>
+                    <li class="aberto" ng-if="vm.data.status_mercado === 1">
+                        MERCADO ABERTO
+                    </li>
+                    <li ng-if="vm.data.status_mercado === 1">
+                        até <span ng-bind="vm.data.fechamento | dataHora"></span>
+                    </li>
+                    <li class="rodada-atual" ng-bind="'Rodada #' + vm.data.rodada_atual"></dd>
+                </dl>
+            </aside>
         </header>
+        <nav class="menu-app">
+            <ul>
+                <li>
+                    <a ui-sref="destaquesRodada" ui-sref-active="active">Destaques rodada #<span ng-bind="vm.data.rodada_atual - 1"></span></a>
+                </li>
+                <li>
+                    <a ui-sref="atletas" ui-sref-active="active">Mercado</a>
+                </li>
+                <li>
+                    <a ui-sref="destaquesMercado" ui-sref-active="active">Mais escalados</span></a>
+                </li>
+                <li>
+                    <a ui-sref="proximaspartidas" ui-sref-active="active">Partidas</span></a>
+                </li>
+                <li>
+                    <a ui-sref="scouts" ui-sref-active="active">Scouts</span></a>
+                </li>
+            </ul>
+        </nav>
         <section class="box-ui-view">
-            <div class="content">
+            <div class="">
                 <section class="box-view box-view-danger aviso-mercado" ng-show="vm.data.aviso">
                     <i class="aviso-icon fa fa-exclamation-triangle"></i>
                     <label ng-bind="vm.data.aviso"></label>

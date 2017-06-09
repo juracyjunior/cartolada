@@ -9,6 +9,7 @@ $colors: (
   primary-dark : #1275E7, 
   danger       : #DC143C,
 	success      : #00b136,
+  success-dark : #04842A,
   warning      : #FFC144,
   info         : #5bc0de,
 	dark-lighter : #EBEBEB,
@@ -21,6 +22,7 @@ $colors: (
 /// @group   Fonts
 $font-sizes: (
   smaller   : 10px,
+  smallest  : 11px,
   small     : 12px, 
   base      : 14px,
   medium    : 16px,

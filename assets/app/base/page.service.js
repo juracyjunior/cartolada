@@ -49,11 +49,13 @@
 
         function stateChangeError(event, toState, toParams, fromState, fromParams, error) {}
 
-        function viewContentLoading(event, viewConfig) {
+        function viewContentLoading(event, viewConfig) 
+        {
             $rootScope.$page.appLoaded = false;
         }
 
-        function viewContentLoaded(event) {
+        function viewContentLoaded(event) 
+        {
             $rootScope.$page.appLoaded = true;
         }
 

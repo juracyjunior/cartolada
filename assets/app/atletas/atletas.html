@@ -8,10 +8,10 @@
 
     <section class="box-view-atletas-filtros-conteudo" ng-show="vm.mostraFiltros">
         <div class="atletas-filtro-coluna atletas-filtro-coluna-times">
-            <label class="field-title">Times</label>
+            <!--label class="field-title">Times</label-->
             <ul class="container-radio times-opcao-radio">
                 <li>
-                    <input type="radio" id="clubeFiltro0" ng-model="vm.clubeFiltro" value="" />
+                    <input type="radio" id="clubeFiltro0" ng-model="vm.clubeFiltro" ng-change="vm.filtrar()" value="" />
                     <label for="clubeFiltro0">
                         <figure class="time-opcao-todos-figure">
                             <figcaption>TODOS</figcaption>
@@ -19,7 +19,7 @@
                     </label>
                 </li>
                 <li ng-repeat="item in vm.clubes">
-                    <input type="radio" id="clubeFiltro{{item.id}}" ng-model="vm.clubeFiltro" ng-value="item.id" />
+                    <input type="radio" id="clubeFiltro{{item.id}}" ng-model="vm.clubeFiltro" ng-change="vm.filtrar()" ng-value="item.id" />
                     <label for="clubeFiltro{{item.id}}">
                         <figure>
                             <img class="img-clube" ng-src="{{vm.clubes | clubeEscudo : item.id}}" />
@@ -34,11 +34,11 @@
             <label class="field-title">Posição</label>
             <ul class="container-radio">
                 <li>
-                    <input type="radio" id="posicaoFiltro0" ng-model="vm.posicaoFiltro" value="" />
+                    <input type="radio" id="posicaoFiltro0" ng-model="vm.posicaoFiltro" ng-change="vm.filtrar()" value="" />
                     <label for="posicaoFiltro0">TODOS</label>
                 </li>
                 <li ng-repeat="item in vm.posicoes">
-                    <input type="radio" id="posicaoFiltro{{item.id}}" ng-model="vm.posicaoFiltro" ng-value="item.id" />
+                    <input type="radio" id="posicaoFiltro{{item.id}}" ng-model="vm.posicaoFiltro" ng-change="vm.filtrar()" ng-value="item.id" />
                     <label for="posicaoFiltro{{item.id}}" ng-bind="item.nome"></label>
                 </li>
             </ul>
@@ -48,19 +48,19 @@
             <label class="field-title">Status</label>
             <ul class="container-radio">
                 <li>
-                    <input type="radio" id="statusFiltro0" ng-model="vm.statusFiltro" value="" />
+                    <input type="radio" id="statusFiltro0" ng-model="vm.statusFiltro" ng-change="vm.filtrar()" value="" />
                     <label for="statusFiltro0">TODOS</label>
                 </li>
                 <li ng-repeat="item in vm.status">
-                    <input type="radio" id="statusFiltro{{item.id}}" ng-model="vm.statusFiltro" ng-value="item.id" />
+                    <input type="radio" id="statusFiltro{{item.id}}" ng-model="vm.statusFiltro" ng-change="vm.filtrar()" ng-value="item.id" />
                     <label for="statusFiltro{{item.id}}" ng-bind="item.nome"></label>
                 </li>
             </ul>
         </div>
     
-        <div class="botoes-acoes">
+        <!--div class="botoes-acoes">
             <button type="button" class="primary" ng-click="vm.filtrar()">Filtrar</button>
-        </div>
+        </div-->
     </section>
 </section>
 <section class="box-view box-view-atletas-cabecalho">
@@ -101,11 +101,11 @@
                 <span ng-switch-when="6" class="fa fa-minus"></span>
                 <span ng-switch-when="7" class="fa fa-check status-jogador-provavel"></span>
             </li>
-            <li ng-bind="item.preco_num | currency"></li>
-            <li ng-bind="item.variacao_num | currency"></li>
-            <li ng-bind="item.pontos_num | number"></li>
-            <li ng-bind="item.media_num | number"></li>
-            <li ng-bind="item.jogos_num"></li>
+            <li ng-class="{'destaque-ordem': vm.ordenarPorCampo === 'preco_num'}" ng-bind="item.preco_num | currency"></li>
+            <li ng-class="{'destaque-ordem': vm.ordenarPorCampo === 'variacao_num'}" ng-bind="item.variacao_num | currency"></li>
+            <li ng-class="{'destaque-ordem': vm.ordenarPorCampo === 'pontos_num'}" ng-bind="item.pontos_num | number"></li>
+            <li ng-class="{'destaque-ordem': vm.ordenarPorCampo === 'media_num'}" ng-bind="item.media_num | number"></li>
+            <li ng-class="{'destaque-ordem': vm.ordenarPorCampo === 'jogos_num'}" ng-bind="item.jogos_num"></li>
         </ul>
     </div>
 </section>
