@@ -11,3 +11,17 @@
     color: color(light);
     background-color: color(warning);
 }
+
+@media #{$information-phone} {
+  .systemTitle
+    {
+        float: none;
+        padding-left: 0px;
+        width: auto;
+        font-size: font-size(base);
+        line-height: normal;
+        background-color: transparent;
+        padding-top: 10px;
+        padding-left: 50px;
+    }
+}

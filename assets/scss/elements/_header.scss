@@ -9,5 +9,24 @@ header
     height: $header-height;
     background-color: color(light);
     z-index: 10;
-    border-bottom: 1px solid color(base);
+
+    .menu-icon {
+        display: none;
+    }
+}
+
+@media #{$information-phone} {
+  header
+  {
+    background-color: color(success);
+    color: color(light);
+
+    .menu-icon {
+      display: block;
+      position: fixed;
+      font-size: font-size(xlarge) - 1;
+      top: 17px;
+      left: 14px;
+    }
+  }
 }

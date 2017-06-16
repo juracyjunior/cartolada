@@ -9,3 +9,15 @@
     color: color(light);
     font-weight: bold;
 }
+
+@media #{$information-phone} {
+  .jogador-posicao
+  {
+    font-size: font-size(smaller);
+    background-color: transparent;
+    padding: 0px;
+    border-radius: 0px;
+    color: color(dark-light);
+    font-weight: normal;
+  }
+}

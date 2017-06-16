@@ -10,12 +10,8 @@
     color: color(light);
     z-index: 11;
     
-    //display: inline-block;
-
     li
     {
-        //display: inline-block;
-        
         a
         {
             line-height: $header-height;
@@ -24,8 +20,6 @@
             color: color(light);
             width: 174px;
 
-            $shadow-hover-active-a: -5px 0px 0px color(light) inset;
-
             &:link
             {
                 text-decoration: none;
@@ -33,33 +27,19 @@
 
             &:hover
             {
-                //box-shadow: $shadow-hover-active-a;
                 background-color: color(success-dark);
             }
 
             &.active
             {
-                //box-shadow: $shadow-hover-active-a;
                 background-color: color(success-dark);
             }
         }
     }
+}
 
-    /*position: fixed;
-    top: $header-height;
-    bottom: 0px;
-    left: 0px;
-    width: $menu-width;
-    background-color: color(dark-lighter);
-    z-index: 10;
-
-    a
-    {
-        padding: 10px;
-        display: block;
-        cursor: pointer;
-        
-        
-        
-    }*/
+@media #{$information-phone} {
+  .menu-app {
+    display: none;
+  }
 }

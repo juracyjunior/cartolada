@@ -5,3 +5,10 @@
     width: 100%;
     margin-bottom: 10px;
 }
+
+@media #{$information-phone} {
+  .box-view-atletas
+  {
+    padding: 5px 8px;
+  }
+}

@@ -73,3 +73,62 @@
         font-size: font-size(small);
     }
 }
+
+@media #{$information-phone} {
+    .card-partida
+    {
+        .partida-jogo
+        {
+            .time-partida
+            {
+                padding-top: 0px;
+
+                & > span
+                {
+                    font-size: font-size(smallest);
+                }
+
+                .img-clube
+                {
+                    width: 30px;
+                }
+
+                &.mandante
+                {
+                    padding-right: 0px;
+
+                    figure 
+                    {
+                        padding-right: 0px;
+                    }
+                }        
+
+                &.visitante
+                {
+                    padding-left: 0%;
+
+                    figure 
+                    {
+                        padding-left: 0px;
+                    }
+                }
+            }
+
+            .placar
+            {
+                font-size: font-size(xxlarge);
+            }
+
+            .vs
+            {
+                padding-top: 0px;
+            }
+        }
+
+        .partida-data,
+        .partida-local
+        {
+            font-size: font-size(smallest);
+        }
+    }
+}

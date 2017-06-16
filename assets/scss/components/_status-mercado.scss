@@ -25,11 +25,50 @@
         color: color(success);
     }
 
+    .fim-mercado
+    {
+        font-size: font-size(smaller);
+    }
+
     .rodada-atual
     {
-        background-color: color(light);
         font-weight: bold;
         display: inline-block;
         border-radius: $border-radius-default;
     }
+}
+
+@media #{$information-phone} {
+  .status-mercado
+  {
+    float: none;
+    margin: 0;
+    position: fixed;
+    top: 6px;
+    right: 10px;
+    color: color(light);
+
+    .info-mercado {
+        li {
+            padding-bottom: 2px;
+        }
+    }
+
+    .fechado
+    {
+        color: color(light);
+    }
+
+    .aberto
+    {
+        color: color(light);
+    }
+
+    .rodada-atual
+    {
+        font-weight: normal;
+        font-size: font-size(smaller);
+        text-transform: uppercase;
+    }
+  }
 }

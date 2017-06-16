@@ -1,3 +1,9 @@
 .destaque-ordem {
   font-weight: bold;
 }
+
+@media #{$information-phone} {
+  .destaque-ordem {
+    color: color(success);
+  }
+}

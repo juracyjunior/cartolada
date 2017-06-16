@@ -33,3 +33,53 @@
         }
     }
 }
+
+@media #{$information-phone} {
+  .card-jogador-dados
+  {
+    li {
+      &.jogador-nome
+      {
+        font-size: font-size(smallest);
+      }
+
+      &.numeros-jogador {
+        font-size: font-size(smallest);
+        text-align: right;
+        display: block;
+        width: 100%;
+
+        
+        &.jogador-preco::after {
+          content: " PRC";
+          width: 30px;
+          display: inline-block;
+        }
+
+        &.jogador-variacao::after {
+          content: " VAR";
+          width: 30px;
+          display: inline-block;
+        }
+
+        &.jogador-ultimo-ponto::after {
+          content: " UPT";
+          width: 30px;
+          display: inline-block;
+        }
+
+        &.jogador-media-pontos::after {
+          content: " MPT";
+          width: 30px;
+          display: inline-block;
+        }
+
+        &.jogador-jogos::after {
+          content: " JOG";
+          width: 30px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

@@ -1,8 +1,17 @@
 @charset 'UTF-8';
 
 .box-ui-view{
-    padding-top: $header-height + 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 182px;
+  padding-top: $header-height + 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 182px;
+}
+
+@media #{$information-phone} {
+  .box-ui-view
+  {
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+  }
 }

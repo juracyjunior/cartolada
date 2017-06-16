@@ -16,10 +16,30 @@
         {
             width: 17%;
         }
-    }
 
-    button
-    {
-        text-transform: uppercase;
+        button
+        {
+            text-transform: uppercase;
+        }
     }
+}
+
+@media #{$information-phone} {
+  .card-jogador-titulo
+  {
+    li 
+    {
+      width: 0;
+
+      &.sem-ordem 
+      {
+        display: none;
+      }
+      
+      button
+      {
+        padding: 0;
+      }
+    }
+  }
 }

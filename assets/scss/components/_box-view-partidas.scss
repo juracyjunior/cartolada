@@ -4,3 +4,10 @@
 {
     width: 400px;
 }
+
+@media #{$information-phone} {
+  .box-view-partidas
+  {
+    width: auto;
+  }
+}

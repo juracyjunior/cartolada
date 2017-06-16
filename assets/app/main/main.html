@@ -13,10 +13,14 @@
     </head>
     <body>
         <header>
+            <a class="menu-app-mobile-icon" ng-click="$page.showMenuMobile = !$page.showMenuMobile">
+                <i class="menu-icon fa fa-bars" aria-hidden="true"></i>
+            </a>
             <h1 class="systemTitle" ng-bind="$page.systemTitle"></h1>
             <h2 class="featureTitle" ng-bind="$page.title"></h2>
             <aside class="status-mercado">
                 <ul class="info-mercado">
+                    <li class="rodada-atual" ng-bind="'Rodada #' + vm.data.rodada_atual"></li>
                     <li class="fechado" ng-if="vm.data.status_mercado === 3">
                         MERCADO EM ATUALIZAÇÃO
                     </li>
@@ -26,10 +30,9 @@
                     <li class="aberto" ng-if="vm.data.status_mercado === 1">
                         MERCADO ABERTO
                     </li>
-                    <li ng-if="vm.data.status_mercado === 1">
+                    <li class="fim-mercado" ng-if="vm.data.status_mercado === 1">
                         até <span ng-bind="vm.data.fechamento | dataHora"></span>
                     </li>
-                    <li class="rodada-atual" ng-bind="'Rodada #' + vm.data.rodada_atual"></dd>
                 </dl>
             </aside>
         </header>
@@ -52,14 +55,31 @@
                 </li>
             </ul>
         </nav>
+        <nav class="menu-app-mobile" ng-hide="!$page.showMenuMobile">
+            <ul>
+                <li>
+                    <a ui-sref="destaquesRodada" ng-click="$page.showMenuMobile = false" ui-sref-active="active">Destaques rodada #<span ng-bind="vm.data.rodada_atual - 1"></span></a>
+                </li>
+                <li>
+                    <a ui-sref="atletas" ng-click="$page.showMenuMobile = false" ui-sref-active="active">Mercado</a>
+                </li>
+                <li>
+                    <a ui-sref="destaquesMercado" ng-click="$page.showMenuMobile = false" ui-sref-active="active">Mais escalados</span></a>
+                </li>
+                <li>
+                    <a ui-sref="proximaspartidas" ng-click="$page.showMenuMobile = false" ui-sref-active="active">Partidas</span></a>
+                </li>
+                <li>
+                    <a ui-sref="scouts" ng-click="$page.showMenuMobile = false" ui-sref-active="active">Scouts</span></a>
+                </li>
+            </ul>
+        </nav>
         <section class="box-ui-view">
-            <div class="">
-                <section class="box-view box-view-danger aviso-mercado" ng-show="vm.data.aviso">
-                    <i class="aviso-icon fa fa-exclamation-triangle"></i>
-                    <label ng-bind="vm.data.aviso"></label>
-                </section>
-                <div ui-view></div>
-            </div>
+            <section class="box-view box-view-danger aviso-mercado" ng-show="vm.data.aviso">
+                <i class="aviso-icon fa fa-exclamation-triangle"></i>
+                <label ng-bind="vm.data.aviso"></label>
+            </section>
+            <div ui-view></div>
         </section>
     </body>
 </html>

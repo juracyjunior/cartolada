@@ -57,19 +57,15 @@
                 </li>
             </ul>
         </div>
-    
-        <!--div class="botoes-acoes">
-            <button type="button" class="primary" ng-click="vm.filtrar()">Filtrar</button>
-        </div-->
     </section>
 </section>
 <section class="box-view box-view-atletas-cabecalho">
     <div class="card-jogador">
         <ul class="card-jogador-titulo">
-            <li>Time</li>
-            <li class="jogador-nome">Jogador</li>
-            <li></li>
-            <li>Status</li>
+            <li class="sem-ordem"></li>
+            <li class="sem-ordem jogador-nome"></li>
+            <li class="sem-ordem"></li>
+            <li class="sem-ordem"></li>
             <li><button type="button" ng-click="vm.ordenarPor('preco_num')"><i class="fa" ng-class="{'fa-chevron-down' : vm.ordemCrescente, 'fa-chevron-up' : !vm.ordemCrescente}" ng-show="vm.ordenarPorCampo === 'preco_num'"></i>Preço</button></li>
             <li><button type="button" ng-click="vm.ordenarPor('variacao_num')"><i class="fa" ng-class="{'fa-chevron-down' : vm.ordemCrescente, 'fa-chevron-up' : !vm.ordemCrescente}" ng-show="vm.ordenarPorCampo === 'variacao_num'"></i>Var. Preço</button></li>
             <li><button type="button" ng-click="vm.ordenarPor('pontos_num')"><i class="fa" ng-class="{'fa-chevron-down' : vm.ordemCrescente, 'fa-chevron-up' : !vm.ordemCrescente}" ng-show="vm.ordenarPorCampo === 'pontos_num'"></i>Ult. Pontos</button></li>
@@ -90,22 +86,22 @@
                     <img class="img-jogador" ng-src="{{item.foto | atletaFoto}}" />
                 </figure>
             </li>
-            <li class="jogador-nome">
-                <p class="jogador-apelido" ng-bind="item.apelido"></p>
-                <p class="jogador-posicao" ng-bind="vm.posicoes | posicaoNome : item.posicao_id"></p>
-            </li>
-            <li ng-switch="item.status_id">
+            <li class="status-jogador" ng-switch="item.status_id">
                 <span ng-switch-when="2" class="fa fa-question status-jogador-duvida"></span>
                 <span ng-switch-when="3" class="icone-cartao-vermelho status-jogador-suspenso"></span>
                 <span ng-switch-when="5" class="fa fa-ambulance status-jogador-contundido"></span>
                 <span ng-switch-when="6" class="fa fa-minus"></span>
                 <span ng-switch-when="7" class="fa fa-check status-jogador-provavel"></span>
             </li>
-            <li ng-class="{'destaque-ordem': vm.ordenarPorCampo === 'preco_num'}" ng-bind="item.preco_num | currency"></li>
-            <li ng-class="{'destaque-ordem': vm.ordenarPorCampo === 'variacao_num'}" ng-bind="item.variacao_num | currency"></li>
-            <li ng-class="{'destaque-ordem': vm.ordenarPorCampo === 'pontos_num'}" ng-bind="item.pontos_num | number"></li>
-            <li ng-class="{'destaque-ordem': vm.ordenarPorCampo === 'media_num'}" ng-bind="item.media_num | number"></li>
-            <li ng-class="{'destaque-ordem': vm.ordenarPorCampo === 'jogos_num'}" ng-bind="item.jogos_num"></li>
+            <li class="jogador-nome">
+                <p class="jogador-apelido" ng-bind="item.apelido"></p>
+                <p class="jogador-posicao" ng-bind="vm.posicoes | posicaoNome : item.posicao_id"></p>
+            </li>
+            <li class="numeros-jogador jogador-preco" ng-class="{'destaque-ordem': vm.ordenarPorCampo === 'preco_num'}" ng-bind="item.preco_num | currency"></li>
+            <li class="numeros-jogador jogador-variacao" ng-class="{'destaque-ordem': vm.ordenarPorCampo === 'variacao_num'}" ng-bind="item.variacao_num | currency"></li>
+            <li class="numeros-jogador jogador-ultimo-ponto" ng-class="{'destaque-ordem': vm.ordenarPorCampo === 'pontos_num'}" ng-bind="item.pontos_num | number"></li>
+            <li class="numeros-jogador jogador-media-pontos" ng-class="{'destaque-ordem': vm.ordenarPorCampo === 'media_num'}" ng-bind="item.media_num | number"></li>
+            <li class="numeros-jogador jogador-jogos" ng-class="{'destaque-ordem': vm.ordenarPorCampo === 'jogos_num'}" ng-bind="item.jogos_num"></li>
         </ul>
     </div>
 </section>

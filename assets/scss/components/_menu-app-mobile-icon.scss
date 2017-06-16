@@ -1,0 +1,10 @@
+.menu-app-mobile-icon {
+  display: none;
+}
+
+@media #{$information-phone} {
+  .menu-app-mobile-icon
+  {
+    display: block;
+  }
+}

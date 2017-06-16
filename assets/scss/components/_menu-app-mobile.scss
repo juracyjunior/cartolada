@@ -1,0 +1,41 @@
+@charset 'UTF-8';
+
+.menu-app-mobile
+{
+  position: fixed;
+  top: $header-height - 1;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: color(success-dark);
+  color: color(light);
+  z-index: 11;  
+    
+  li
+  {
+    a
+    {
+      line-height: $header-height;
+      display: block;
+      padding: 0px 15px;
+      color: color(light);
+      width: 100%;
+      font-size: font-size(medium);
+
+      &:link
+      {
+        text-decoration: none;
+      }
+
+      &:hover
+      {
+        background-color: color(dark-20);
+      }
+
+      &.active
+      {
+        background-color: color(dark-20);
+      }
+    }
+  }
+}
