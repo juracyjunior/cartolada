@@ -3,6 +3,7 @@
 module.exports = {
     appDir: "app",
     buildDir: "dist",
+    prod: false,
 
     sourceCSS: "assets/scss/**/*.scss",
     fileCSS: "styles.min.css",

@@ -16,7 +16,7 @@ gulp.task("jshint", function () {
 });
 
 gulp.task("jsmin", ["jshint"], function () {
-	if (args.prod){
+	if (config.prod){
 		console.log("jsmin prod");
 		return gulp.src(config.sourceJS)
 			.pipe(uglify())
