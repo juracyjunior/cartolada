@@ -18,15 +18,17 @@ header
 @media #{$information-phone} {
   header
   {
-    background-color: color(success);
-    color: color(light);
+    background-color: color(light);
+    box-shadow: $box-shadow-default;
 
-    .menu-icon {
+    .menu-icon
+    {
+      color: color(dark-light);
       display: block;
       position: fixed;
       font-size: font-size(xlarge) - 1;
-      top: 17px;
-      left: 14px;
+      top: 19px;
+      left: 10px;
     }
   }
 }

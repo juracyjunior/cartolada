@@ -42,3 +42,41 @@
         }
     }
 }
+
+@media #{$information-phone} {
+    .times-opcao-radio
+    {
+        li
+        {
+            padding: 0px 6px;
+            padding-bottom: 20px;
+
+            input[type="radio"] 
+            {
+                & + label
+                {
+                    &:before 
+                    {
+                        top: 15px;
+                        left: 15px;
+                    }
+
+                    &:after 
+                    {
+                        top: 18px;
+                        left: 18px;
+                    }
+                }
+            }
+
+            figure
+            {
+                figcaption
+                {
+                    margin-top: 0px;
+                    display: none;
+                }
+            }
+        }
+    }
+}

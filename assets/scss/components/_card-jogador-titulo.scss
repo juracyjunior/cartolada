@@ -29,7 +29,18 @@
   {
     li 
     {
-      width: 0;
+      display: inline;
+      padding: 0 14px;
+
+      &:first-child
+      {
+        padding-left: 0px;
+      }
+
+      &:last-child
+      {
+        padding-right: 0px;
+      }
 
       &.sem-ordem 
       {

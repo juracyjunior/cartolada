@@ -11,3 +11,12 @@
     text-align: center;
     margin: 0 auto;
 }
+
+@media #{$information-phone} {
+    .box-view
+    {
+        border-radius: 0px;
+        padding: $space-default;
+        text-align: left;
+    }
+}

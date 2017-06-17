@@ -1,0 +1,19 @@
+@charset 'UTF-8';
+
+$space-card: 5px;
+
+.card-filtro-jogador
+{
+    display: table;
+    vertical-align: middle;
+    padding: 0 $space-card;
+    white-space: nowrap;
+    width: 100%;
+}
+
+@media #{$information-phone} {
+    .card-filtro-jogador
+    {
+        padding: 0;
+    }
+}

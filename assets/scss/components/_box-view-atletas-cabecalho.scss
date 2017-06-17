@@ -14,3 +14,11 @@
         margin-right: 3px;
     }
 }
+
+@media #{$information-phone} {
+    .box-view-atletas-cabecalho
+    {
+        padding-top: 0;
+        margin-bottom: 12px;
+    }
+}

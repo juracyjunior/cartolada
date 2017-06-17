@@ -4,3 +4,10 @@
     margin-right: 40px;
     vertical-align: top;
 }
+
+@media #{$information-phone} {
+    .atletas-filtro-coluna
+    {
+        margin-right: 3px;
+    }
+}

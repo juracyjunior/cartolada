@@ -8,7 +8,6 @@
 
     <section class="box-view-atletas-filtros-conteudo" ng-show="vm.mostraFiltros">
         <div class="atletas-filtro-coluna atletas-filtro-coluna-times">
-            <!--label class="field-title">Times</label-->
             <ul class="container-radio times-opcao-radio">
                 <li>
                     <input type="radio" id="clubeFiltro0" ng-model="vm.clubeFiltro" ng-change="vm.filtrar()" value="" />
@@ -60,12 +59,12 @@
     </section>
 </section>
 <section class="box-view box-view-atletas-cabecalho">
-    <div class="card-jogador">
+    <div class="card-filtro-jogador">
         <ul class="card-jogador-titulo">
-            <li class="sem-ordem"></li>
+            <!--li class="sem-ordem"></li>
             <li class="sem-ordem jogador-nome"></li>
             <li class="sem-ordem"></li>
-            <li class="sem-ordem"></li>
+            <li class="sem-ordem"></li-->
             <li><button type="button" ng-click="vm.ordenarPor('preco_num')"><i class="fa" ng-class="{'fa-chevron-down' : vm.ordemCrescente, 'fa-chevron-up' : !vm.ordemCrescente}" ng-show="vm.ordenarPorCampo === 'preco_num'"></i>Preço</button></li>
             <li><button type="button" ng-click="vm.ordenarPor('variacao_num')"><i class="fa" ng-class="{'fa-chevron-down' : vm.ordemCrescente, 'fa-chevron-up' : !vm.ordemCrescente}" ng-show="vm.ordenarPorCampo === 'variacao_num'"></i>Var. Preço</button></li>
             <li><button type="button" ng-click="vm.ordenarPor('pontos_num')"><i class="fa" ng-class="{'fa-chevron-down' : vm.ordemCrescente, 'fa-chevron-up' : !vm.ordemCrescente}" ng-show="vm.ordenarPorCampo === 'pontos_num'"></i>Ult. Pontos</button></li>

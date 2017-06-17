@@ -4,8 +4,19 @@
     {
         @include generated-content(30px, 33px);
 
-        background-color: color(light);
+        background-color: color(base);
         border-radius: 50%;
         border: 1px solid color(dark-lightest);
+    }
+}
+
+@media #{$information-phone} {
+    .time-opcao-todos-figure
+    {
+        &:before
+        {
+            width: 20px;
+            height: 20px;
+        }
     }
 }
