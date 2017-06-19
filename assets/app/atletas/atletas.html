@@ -104,7 +104,13 @@
         </ul>
     </div>
 </section>
-<section class="paginacao">
-    <button type="button" ng-repeat="item in vm.paginacao()"
-        ng-click="vm.getItensPagina(item.index)" ng-bind="item.index"></button>
+<section class="paginacao" ng-if="vm.qtdPaginas > 1">
+    <button class="" type="button" ng-click="vm.getItensPagina(vm.paginaAtual - 1)" ng-disabled="vm.paginaAtual == 1">Anterior</button>
+
+    <!--button type="button" ng-repeat="item in vm.paginacao()"
+        ng-click="vm.getItensPagina(item.index)" ng-bind="item.index"></button-->
+
+    <label ng-bind="vm.paginaAtual + ' de ' + vm.qtdPaginas"></label>
+
+    <button class="" type="button" ng-click="vm.getItensPagina(vm.paginaAtual + 1)" ng-disabled="vm.paginaAtual >= vm.qtdPaginas">Pr&oacute;xima</button>
 </section>

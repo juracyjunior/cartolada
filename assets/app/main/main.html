@@ -4,6 +4,15 @@
         <title ng-bind="$page.systemTitle"></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-title" content="{{ $page.systemTitle }}">
+        
+        <link rel="apple-touch-startup-image" href="/img/launch-app-iphone.png">
+        <link rel="apple-touch-icon" href="/img/icon-app-iphone.png">
+        <!--link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="touch-icon-iphone-retina.png">
+        <link rel="apple-touch-icon" sizes="167x167" href="touch-icon-ipad-retina.png"-->
         
         <link href="css/libs.min.css" rel="stylesheet" />
         <link href="css/styles.min.css" rel="stylesheet" />
@@ -57,9 +66,9 @@
         </nav>
         <nav class="menu-app-mobile" ng-hide="!$page.showMenuMobile">
             <ul>
-                <li>
+                <!--li>
                     <a ui-sref="destaquesRodada" ng-click="$page.showMenuMobile = false" ui-sref-active="active">Destaques rodada #<span ng-bind="vm.data.rodada_atual - 1"></span></a>
-                </li>
+                </li-->
                 <li>
                     <a ui-sref="atletas" ng-click="$page.showMenuMobile = false" ui-sref-active="active">Mercado</a>
                 </li>

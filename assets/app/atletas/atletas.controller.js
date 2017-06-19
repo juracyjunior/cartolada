@@ -18,6 +18,7 @@
         vm.ordemCrescente = true;
         vm.ordenarPor = ordenarPor;
 
+        vm.getItensPagina = getItensPagina;
         vm.paginacao = paginacao;
         vm.pagina = [];
         vm.qtdPaginas = 0;
@@ -48,7 +49,7 @@
             vm.clubes = vm.data.clubes;
             vm.status = vm.data.status;
             vm.atletas = vm.data.atletas;
-            console.log(vm.data);
+            //console.log(vm.data);
             filtrar();
         }
 
@@ -77,7 +78,8 @@
             }
             ordenar();
             vm.qtdPaginas = Math.round(vm.atletasFiltrado.length / tamanhoPagina) + 1;
-            getItensPagina(vm.paginaAtual);
+            //getItensPagina(vm.paginaAtual);
+            getItensPagina(1);
         }
 
         function getItensPagina(pagina)
@@ -97,6 +99,8 @@
                     vm.pagina = [];
                 vm.pagina.push(vm.atletasFiltrado[i]);
             }
+
+            vm.paginaAtual = pagina;
         }
 
         function ordenarPor(ordem)
@@ -118,10 +122,10 @@
         function paginacao()
         {
             var paginas = [];
-            /*for(var i = 1; i <= vm.qtdPaginas; i++)
+            for(var i = 1; i <= vm.qtdPaginas; i++)
             {
                 paginas.push({index: i});
-            }*/
+            }
             return paginas;
         }
     }

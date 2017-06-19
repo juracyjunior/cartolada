@@ -1,18 +1,25 @@
 .box-view-atletas-filtros
 {
-    margin-bottom: 10px;
-    padding-bottom: 8px;
-    padding-top: 5px;
-    width: 100%;
-    text-align: left;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  padding-top: 5px;
+  width: 100%;
+  text-align: left;
 
-    ul
+  ul
+  {
+    //display: inline-block;
+
+    & + ul
     {
-        //display: inline-block;
-
-        & + ul
-        {
-            margin-left: 20px;
-        }
+      margin-left: 20px;
     }
+  }
+}
+
+@media #{$information-phone} {
+  .box-view-atletas-filtros
+  {
+    width: auto;
+  }
 }

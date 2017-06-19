@@ -1,4 +1,4 @@
-<section class="box-view box-view-atletas-cabecalho">
+<!--section class="box-view box-view-atletas-cabecalho">
     <div class="card-jogador">
         <ul class="card-jogador-titulo">
             <li>Time</li>
@@ -12,7 +12,7 @@
             <li><button type="button" ng-click="vm.ordenarPor('jogos_num')"><i class="fa" ng-class="{'fa-chevron-down' : vm.ordemCrescente, 'fa-chevron-up' : !vm.ordemCrescente}" ng-show="vm.ordenarPorCampo === 'jogos_num'"></i>Jogos</button></li>
         </ul>
     </div>  
-</section>
+</section-->
 <section class="box-view box-view-atletas">
     <div ng-repeat="item in vm.pagina" class="card card-jogador" ng-if="item.apelido">
         <ul class="card-jogador-dados">
@@ -36,15 +36,29 @@
                 <span ng-switch-when="6" class="fa fa-minus"></span>
                 <span ng-switch-when="7" class="fa fa-check status-jogador-provavel"></span>
             </li>
-            <li ng-bind="item.preco_num | currency"></li>
-            <li ng-bind="item.variacao_num | currency"></li>
-            <li ng-bind="item.pontos_num | number"></li>
-            <li ng-bind="item.media_num | number"></li>
-            <li ng-bind="item.jogos_num"></li>
+            <li class="jogador-pontos" ng-bind="item.pontuacao"
+                ng-class="{'texto-positivo': item.pontuacao > 0,
+                           'texto-negativo': item.pontuacao < 0}"></li>
         </ul>
+        <div class="jogador-scout">
+            <ul>
+                <li ng-repeat="(key, value) in item.scout" 
+                    ng-class="{'texto-positivo': ['SG','DP','DD','RB','G','A','FT','FD','FF','FS'].indexOf(key) !== -1, 
+                               'texto-negativo': ['GC','CV','CA','GS','FC','PP','I','PE'].indexOf(key) !== -1}">
+                    <p>{{ key }}</p>
+                    <p>{{ value }}</p>
+                </li>
+            </ul>
+        </div>
     </div>
 </section>
-<section class="paginacao">
-    <button type="button" ng-repeat="item in vm.paginacao()"
-        ng-click="vm.getItensPagina(item.index)" ng-bind="item.index"></button>
+<section class="paginacao" ng-if="vm.qtdPaginas > 1">
+    <button class="" type="button" ng-click="vm.getItensPagina(vm.paginaAtual - 1)" ng-disabled="vm.paginaAtual == 1">Anterior</button>
+
+    <!--button type="button" ng-repeat="item in vm.paginacao()"
+        ng-click="vm.getItensPagina(item.index)" ng-bind="item.index"></button-->
+
+    <label ng-bind="vm.paginaAtual + ' de ' + vm.qtdPaginas"></label>
+
+    <button class="" type="button" ng-click="vm.getItensPagina(vm.paginaAtual + 1)" ng-disabled="vm.paginaAtual >= vm.qtdPaginas">Pr&oacute;xima</button>
 </section>

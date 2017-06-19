@@ -14,9 +14,10 @@
         vm.atletas = [];
 
         vm.ordenarPorCampo = "pontuacao";
-        vm.ordemCrescente = false;
+        vm.ordemCrescente = true;
         vm.ordenarPor = ordenarPor;
-
+        
+        vm.getItensPagina = getItensPagina;
         vm.paginacao = paginacao;
         vm.pagina = [];
         vm.qtdPaginas = 0;
@@ -24,10 +25,6 @@
         var tamanhoPagina = 20;
 
         vm.filtrar = filtrar;
-
-        /*vm.clubeFiltro = "";
-        vm.posicaoFiltro = "";
-        vm.statusFiltro = 7;*/
 
         init();
 
@@ -58,26 +55,6 @@
         function filtrar()
         {
             vm.atletasFiltrado = angular.copy(vm.atletas);
-            /*if (vm.clubeFiltro && vm.clubeFiltro !== "")
-            {
-                vm.atletasFiltrado = vm.atletas.filterByField('clube_id', vm.clubeFiltro);
-            }
-            if (vm.posicaoFiltro && vm.posicaoFiltro !== "")
-            {
-                if (vm.atletasFiltrado){
-                    vm.atletasFiltrado = vm.atletasFiltrado.filterByField('posicao_id', vm.posicaoFiltro);
-                } else {
-                    vm.atletasFiltrado = vm.atletas.filterByField('posicao_id', vm.posicaoFiltro);
-                }
-            }
-            if (vm.statusFiltro && vm.statusFiltro !== "")
-            {
-                if (vm.atletasFiltrado){
-                    vm.atletasFiltrado = vm.atletasFiltrado.filterByField('status_id', vm.statusFiltro);
-                } else {
-                    vm.atletasFiltrado = vm.atletas.filterByField('status_id', vm.statusFiltro);
-                }
-            }*/
             ordenar();
             vm.qtdPaginas = Math.round(vm.atletasFiltrado.length / tamanhoPagina) + 1;
             getItensPagina(vm.paginaAtual);
@@ -100,6 +77,8 @@
                     vm.pagina = [];
                 vm.pagina.push(vm.atletasFiltrado[i]);
             }
+
+            vm.paginaAtual = pagina;
         }
 
         function ordenarPor(ordem)
@@ -121,10 +100,10 @@
         function paginacao()
         {
             var paginas = [];
-            /*for(var i = 1; i <= vm.qtdPaginas; i++)
+            for(var i = 1; i <= vm.qtdPaginas; i++)
             {
                 paginas.push({index: i});
-            }*/
+            }
             return paginas;
         }
     }

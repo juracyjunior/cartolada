@@ -8,10 +8,17 @@ button
     border-radius: $border-radius-default;
     text-transform: uppercase;
     font-size: font-size(smaller);
+    color: color(dark);
+
+    &:disabled
+    {
+        color: color(dark-lightest);
+        cursor: pointer;
+    }
 
     &:hover
     {
-        color: color(primary);
+        //color: color(primary);
     }
 
     &.primary

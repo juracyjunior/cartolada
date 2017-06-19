@@ -1,0 +1,23 @@
+@media #{$information-phone} {
+  .jogador-scout
+  {
+    position: absolute;
+    font-size: font-size(smallest);
+    top: 40px;
+    right: 6px;
+
+    ul
+    {
+      //position: absolute;
+      top: 30px;
+      right: 0px;
+
+      li
+      {
+        display: inline-block;
+        padding-left: 7px;
+        text-align: center;
+      }
+    }
+  }
+}

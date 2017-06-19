@@ -23,10 +23,16 @@
     {
         return function (obj)
         {
-            var data = obj.toString().split(" ")[0].split("-");
-            var hora = obj.toString().split(" ")[1];
-            var dataObj = new Date(data);            
-            return semana[dataObj.getDay()] + " " + dataObj.getDate().toString().lpad(2, "0") + "/" + (dataObj.getMonth() + 1).toString().lpad(2, "0") + " " + hora.substring(0, 5);
+            var ano = obj.substring(0,4);
+            var mes = obj.substring(5,7);
+            var dia = obj.substring(8,10);
+
+            var hor = obj.substring(11,13);
+            var min = obj.substring(14,16);
+
+            var dataObj = new Date(ano, mes, dia, hor, min, 0, 0);
+
+            return semana[dataObj.getDay()] + " " + dataObj.getDate().toString().lpad(2, "0") + "/" + (dataObj.getMonth() + 1).toString().lpad(2, "0") + " " + hor + ":" + min;
         };
     }
 })();
