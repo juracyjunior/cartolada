@@ -86,11 +86,12 @@
                 & > span
                 {
                     font-size: font-size(smallest);
+                    display: inline-block;
                 }
 
                 .img-clube
                 {
-                    width: 30px;
+                    width: 25px;
                 }
 
                 &.mandante
@@ -100,6 +101,8 @@
                     figure 
                     {
                         padding-right: 0px;
+                        padding-left: 10px;
+                        display: inline-block;
                     }
                 }        
 
@@ -110,18 +113,31 @@
                     figure 
                     {
                         padding-left: 0px;
+                        padding-right: 10px;
+                        display: inline-block;
                     }
                 }
             }
 
             .placar
             {
+                width: 15%;
                 font-size: font-size(xxlarge);
             }
 
             .vs
             {
                 padding-top: 0px;
+            }
+        }
+
+        .partida-data-local
+        {
+            text-align: center;
+
+            li 
+            {
+                display: inline-block;
             }
         }
 

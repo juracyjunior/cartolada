@@ -10,6 +10,7 @@
     //width: 520px;
     text-align: center;
     margin: 0 auto;
+    margin-bottom: 80px;
 }
 
 @media #{$information-phone} {
@@ -19,5 +20,6 @@
         padding: $space-default;
         text-align: left;
         margin: auto 5px;
+        margin-bottom: 80px;
     }
 }
