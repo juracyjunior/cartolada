@@ -3,10 +3,10 @@
 .menu-app
 {
     position: fixed;
-    top: $header-height - 1;
+    top: $header-height;
     left: 0;
     bottom: 0;
-    background-color: color(success);
+    @include background-gradient(color(success-light), color(success-lightest), color(success-light));
     color: color(light);
     z-index: 11;
     
@@ -27,12 +27,12 @@
 
             &:hover
             {
-                background-color: color(success-dark);
+                background-color: color(success-light);
             }
 
             &.active
             {
-                background-color: color(success-dark);
+                background-color: color(success-light);
             }
         }
     }

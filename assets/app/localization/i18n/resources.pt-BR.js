@@ -21,7 +21,7 @@
             home: "Home",
             destaquesrodada: "Destaques rodada",
             destaquesmercado: "Mais escalados",
-            proximaspartidas: "Próximas partidas",
+            proximaspartidas: "Partidas",
             atletas: "Mercado",
             scouts: "Scouts"
         },

@@ -7,7 +7,8 @@ header
     right: 0;
     left: 0;
     height: $header-height;
-    background-color: color(light);
+    background-color: color(success-lightest);
+    color: color(light);
     z-index: 10;
 
     .menu-icon {
@@ -18,17 +19,14 @@ header
 @media #{$information-phone} {
   header
   {
-    background-color: color(light);
-    box-shadow: $box-shadow-default;
-
     .menu-icon
     {
-      color: color(dark-light);
       display: block;
       position: fixed;
       font-size: font-size(xlarge) - 1;
       top: 19px;
       left: 10px;
+      text-shadow: $text-shadow-default;
     }
   }
 }

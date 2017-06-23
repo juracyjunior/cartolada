@@ -15,7 +15,7 @@
         $translateProvider.useSanitizeValueStrategy(null);
 
         blockUIConfig.autoBlock = true;
-        blockUIConfig.delay = 500;
+        blockUIConfig.delay = 0;
 
         NotificationProvider.setOptions({
             delay: 5000,

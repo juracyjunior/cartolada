@@ -8,6 +8,7 @@
   line-height: $header-height - 1;
   font-weight: normal;
   text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
 }
 
 @media #{$information-phone} {
@@ -18,5 +19,6 @@
     font-size: font-size(base);
     line-height: normal;
     padding-left: 40px;
+    
   }
 }

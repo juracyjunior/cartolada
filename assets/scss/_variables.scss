@@ -3,20 +3,22 @@
 /// Colors map to system
 /// @group   Color
 $colors: (
-	light        : #fff,
-	base         : #f3f3f3,
-  primary      : #1E90FF,
-  primary-dark : #1275E7, 
-  danger       : #DC143C,
-	success      : #00b136,
-  success-dark : #04842A,
-  warning      : #FFC144,
-  info         : #5bc0de,
-	dark-lighter : #EBEBEB,
-  dark-lightest: #dddddd,
-	dark-light   : #777,
-  dark         : #000,
-  dark-20      : rgba(0,0,0,0.2)
+	light           : #fff,
+	base            : #f3f3f3,
+  primary         : #1E90FF,
+  primary-dark    : #1275E7, 
+  danger          : #DC143C,
+	success         : #00b136,
+  success-light   : #1DC9A6,
+  success-lightest: #14866F,
+  success-dark    : #04842A,
+  warning         : #FFC144,
+  info            : #5bc0de,
+	dark-lighter    : #EBEBEB,
+  dark-lightest   : #dddddd,
+	dark-light      : #777,
+  dark            : #000,
+  dark-20         : rgba(0,0,0,0.2)
 ) !default;
 
 /// Fonts map to system
@@ -47,6 +49,8 @@ $space-default: 10px;
 
 $box-shadow-default: 0px 2px 3px -1px rgba(0, 0, 0, 0.15);
 $box-shadow-default-invert: 0px -2px 3px -1px rgba(0, 0, 0, 0.15);
+
+$text-shadow-default: 1px 1px 2px rgba(0,0,0,0.9);
 
 $header-height: 60px;
 

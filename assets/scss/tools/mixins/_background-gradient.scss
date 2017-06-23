@@ -1,0 +1,30 @@
+@charset 'UTF-8';
+
+/// CSS generated blank content
+///
+/// @param   {color}     $color-base              - Color base for browsers that do not support gradients
+/// @param   {color}     $color-start             - Color start of the gradient
+/// @param   {color}     $color-end               - Color end of the gradient
+/// @param   {direction} $direction   [to bottom] - Direction of the gradient
+///
+/// @example scss - Usage
+///   .bkg {
+///     @include background-gradient(red, green, yellow[, to bottom]);
+///   }
+///
+/// @example scss - Compiled
+///   .bkg {
+///     background: red; /* For browsers that do not support gradients */
+///     background: -webkit-linear-gradient(to bottom, green, yellow); /* For Safari 5.1 to 6.0 */
+///     background: -o-linear-gradient(to bottom, green, yellow); /* For Opera 11.1 to 12.0 */
+///     background: -moz-linear-gradient(to bottom, green, yellow); /* For Firefox 3.6 to 15 */
+///     background: linear-gradient(to bottom, green, yellow); /* Standard syntax */
+///   }
+
+@mixin background-gradient($color-base, $color-start, $color-end, $direction: to bottom) {
+  background: $color-base;
+  background: -webkit-linear-gradient($direction, $color-start, $color-end);
+  background: -o-linear-gradient($direction, $color-start, $color-end);
+  background: -moz-linear-gradient($direction, $color-start, $color-end);
+  background: linear-gradient($direction, $color-start, $color-end);
+}

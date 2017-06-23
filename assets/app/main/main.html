@@ -29,20 +29,18 @@
             <h2 class="featureTitle" ng-bind="$page.title"></h2>
             <aside class="status-mercado">
                 <ul class="info-mercado">
-                    <li class="rodada-atual" ng-bind="'Rodada #' + vm.data.rodada_atual"></li>
-                    <li class="fechado" ng-if="vm.data.status_mercado === 3">
-                        MERCADO EM ATUALIZAÇÃO
-                    </li>
-                    <li class="fechado" ng-if="vm.data.status_mercado === 2">
-                        MERCADO FECHADO
-                    </li>
-                    <li class="aberto" ng-if="vm.data.status_mercado === 1">
-                        MERCADO ABERTO
+                    <li class="rodada-atual" ng-bind="'Rodada #' + vm.data.rodada_atual">carregando...</li>
+                    <li ng-switch="vm.data.status_mercado">
+                        <label class="fechado" ng-switch-when="3">MERCADO EM ATUALIZAÇÃO</label>
+                        <label class="fechado" ng-switch-when="2">MERCADO FECHADO</label>
+                        <label class="aberto" ng-switch-when="1">MERCADO ABERTO</label>
+                        <label ng-switch-default>carregando...</label>
                     </li>
                     <li class="fim-mercado" ng-if="vm.data.status_mercado === 1">
                         até <span ng-bind="vm.data.fechamento | dataHora"></span>
                     </li>
-                </dl>
+                </ul>
+                <button class="refresh-feature" ng-click="$page.doRefresh()" type="button"><i class="fa fa-refresh"></i></button>
             </aside>
         </header>
         <nav class="menu-app">

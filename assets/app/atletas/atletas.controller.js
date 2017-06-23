@@ -2,9 +2,9 @@
     "use strict";
 
     angular.module("app").
-        controller("atletasController", ["atletasService", "apiService", "orderByFilter", atletasController]);
+        controller("atletasController", ["atletasService", "apiService", "orderByFilter", "$rootScope", atletasController]);
 
-    function atletasController(atletasService, apiService, orderBy)
+    function atletasController(atletasService, apiService, orderBy, $rootScope)
     {
         /*jshint validthis:true*/
         var vm = this;
@@ -30,6 +30,8 @@
         vm.clubeFiltro = "";
         vm.posicaoFiltro = "";
         vm.statusFiltro = 7;
+
+        $rootScope.$page.doRefresh = doRefresh;
 
         init();
 
@@ -127,6 +129,11 @@
                 paginas.push({index: i});
             }
             return paginas;
+        }
+
+        function doRefresh()
+        {
+            getAtletas();
         }
     }
 })();

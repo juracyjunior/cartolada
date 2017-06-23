@@ -14,6 +14,9 @@
     </div>  
 </section-->
 <section class="box-view box-view-atletas">
+    <div ng-if="!vm.pagina || vm.pagina.lenght === 0" class="card-aviso">
+        Sem informações de scouts por enquanto!
+    </div>
     <div ng-repeat="item in vm.pagina" class="card card-jogador" ng-if="item.apelido">
         <ul class="card-jogador-dados">
             <li>

@@ -6,6 +6,7 @@
 
 @import './tools/mixins/breakpoints';
 @import './tools/mixins/generated-content';
+@import './tools/mixins/background-gradient';
 
 @import './tools/placeholders/clearfix';
 
@@ -39,6 +40,7 @@
 @import './components/card-jogador-titulo';
 @import './components/card-jogador-dados';
 @import './components/card-partida';
+@import './components/card-aviso';
 @import './components/content';
 @import './components/destaque-ordem';
 @import './components/destaques-rodada-media';
