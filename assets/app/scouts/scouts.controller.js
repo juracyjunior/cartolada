@@ -46,6 +46,7 @@
             vm.clubes = vm.data.clubes;
 
             delete vm.atletas;
+            delete vm.pagina;
 
             for (var a in vm.data.atletas) {
                 if (!vm.atletas)
@@ -58,15 +59,18 @@
 
         function filtrar()
         {
-            vm.atletasFiltrado = angular.copy(vm.atletas);
-            ordenar();
-            vm.qtdPaginas = Math.round(vm.atletasFiltrado.length / tamanhoPagina) + 1;
-            getItensPagina(vm.paginaAtual);
+            if (vm.atletas && vm.atletas.length > 0)
+            {
+                vm.atletasFiltrado = angular.copy(vm.atletas);
+                ordenar();
+                vm.qtdPaginas = Math.round(vm.atletasFiltrado.length / tamanhoPagina) + 1;
+                getItensPagina(vm.paginaAtual);
+            }
         }
 
-        function getItensPagina(pagina)
+        function getItensPagina(num_pagina)
         {
-            var fim = (pagina * tamanhoPagina) - 1;
+            var fim = (num_pagina * tamanhoPagina) - 1;
             if (fim > vm.atletasFiltrado.length) { 
                 fim = vm.atletasFiltrado.length - 1;
             }
@@ -82,7 +86,7 @@
                 vm.pagina.push(vm.atletasFiltrado[i]);
             }
 
-            vm.paginaAtual = pagina;
+            vm.paginaAtual = num_pagina;
         }
 
         function ordenarPor(ordem)

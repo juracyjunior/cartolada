@@ -3,11 +3,19 @@
   background-color: color(base);
   color: color(dark);
   position: fixed;
-  bottom: 0;
+  bottom: 0px;
   left: 0;
   right: 0;
   text-align: center;
   padding: 5px 0px;
   border-top: 1px solid color(dark-lightest);
   font-size: font-size(smallest);
+}
+
+@media #{$information-phone} 
+{
+  .paginacao
+  {
+    bottom: 40px;
+  }
 }

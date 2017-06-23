@@ -11,3 +11,15 @@
         position: relative;
     }
 }
+
+@media #{$information-phone} 
+{
+    .container-radio
+    {
+        li
+        {
+            font-size: font-size(small);
+            padding-bottom: 8px;
+        }
+    }
+}

@@ -9,7 +9,7 @@
     line-height: $header-height;
     font-weight: bold;
     color: color(light);
-    text-shadow: $text-shadow-default;
+    //text-shadow: $text-shadow-default;
     background-color: color(warning);
 }
 
@@ -24,6 +24,7 @@
         //color: color(success);
         background-color: transparent;
         padding-top: 12px;
-        padding-left: 40px;
+        padding-left: 5px;
+        display: none;
     }
 }

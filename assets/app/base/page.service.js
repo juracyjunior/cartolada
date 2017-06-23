@@ -12,8 +12,7 @@
             systemSubtitle: "",
             title         : "",
             subtitle      : "",
-            appLoaded     : false,
-            showMenuMobile: false
+            appLoaded     : false
         };
 
         return {

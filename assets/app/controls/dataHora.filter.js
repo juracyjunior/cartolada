@@ -30,7 +30,7 @@
             var hor = obj.substring(11,13);
             var min = obj.substring(14,16);
 
-            var dataObj = new Date(ano, mes, dia, hor, min, 0, 0);
+            var dataObj = new Date(ano, mes-1, dia, hor, min, 0, 0);
 
             return semana[dataObj.getDay()] + " " + dataObj.getDate().toString().lpad(2, "0") + "/" + (dataObj.getMonth() + 1).toString().lpad(2, "0") + " " + hor + ":" + min;
         };

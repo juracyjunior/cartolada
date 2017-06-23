@@ -49,7 +49,7 @@
         li
         {
             padding: 0px 6px;
-            padding-bottom: 20px;
+            padding-bottom: 35px;
 
             input[type="radio"] 
             {
@@ -57,14 +57,14 @@
                 {
                     &:before 
                     {
-                        top: 15px;
-                        left: 15px;
+                        top: 40px;
+                        left: 17px;
                     }
 
                     &:after 
                     {
-                        top: 18px;
-                        left: 18px;
+                        top: 43px;
+                        left: 20px;
                     }
                 }
             }

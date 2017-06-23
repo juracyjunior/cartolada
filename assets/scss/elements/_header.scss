@@ -19,6 +19,8 @@ header
 @media #{$information-phone} {
   header
   {
+    height: 48px;
+
     .menu-icon
     {
       display: block;
@@ -26,7 +28,7 @@ header
       font-size: font-size(xlarge) - 1;
       top: 19px;
       left: 10px;
-      text-shadow: $text-shadow-default;
+      //text-shadow: $text-shadow-default;
     }
   }
 }

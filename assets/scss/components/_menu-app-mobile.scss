@@ -3,40 +3,79 @@
 .menu-app-mobile
 {
   position: fixed;
-  top: $header-height;
+  //top: $header-height;
   left: 0;
   bottom: 0;
   right: 0;
-  @include background-gradient(color(success-light), color(success-lightest), color(success-light));
+  background-color: color(success-light);
+  //@include background-gradient(color(success-light), color(success-lightest), color(success-light));
   color: color(light);
   z-index: 11;
-  box-shadow: $box-shadow-default-invert;
-    
-  li
+  //box-shadow: $box-shadow-default-invert;
+
+  ul
   {
-    a
+    display: inline-table;
+    width: 100%;
+
+    li
     {
-      line-height: $header-height;
-      display: block;
-      padding: 0px 15px;
-      color: color(light);
-      width: 100%;
-      font-size: font-size(medium);
-      border-bottom: 1px solid rgba(255,255,255,0.2);
+      display: table-cell;
+      text-align: center;
+      width: 20%;
 
-      &:link
+      a
       {
-        text-decoration: none;
+        height: 40px;
+        display: block;
+        padding: 4px 0px;
+        color: color(light);
+        width: 100%;
+        font-size: font-size(medium);
+
+        &:not(last-child) 
+        {
+          border-left: 1px solid rgba(255,255,255,0.2);
+        }
+
+        &:link
+        {
+          text-decoration: none;
+        }
+
+        &:hover
+        {
+          background-color: color(dark-20);
+        }
+
+        &.active
+        {
+          background-color: color(dark-20);
+        }
+
+        label.text-menu
+        {
+          font-size: 10px;
+          display: block;
+        }
       }
 
-      &:hover
+      &:last-child
       {
-        background-color: color(dark-20);
-      }
+        a
+        {
+          background-color: color(warning);
 
-      &.active
-      {
-        background-color: color(dark-20);
+          &:hover
+          {
+            background-color: color(warning);
+          }
+
+          &.active
+          {
+            background-color: color(warning);
+          }
+        }
       }
     }
   }

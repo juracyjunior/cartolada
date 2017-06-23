@@ -16,9 +16,10 @@
   {
     float: none;
     padding-left: 0px;
-    font-size: font-size(base);
-    line-height: normal;
-    padding-left: 40px;
-    
+    font-size: font-size(medium);
+    line-height: 32px;
+    padding-left: 5px;
+    color: color(light);
+    display: none;
   }
 }

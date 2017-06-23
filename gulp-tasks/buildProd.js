@@ -14,7 +14,7 @@ gulp.task("prod", function() {
             "copy:html",
             "copy:lib",
             "copy:resources"
-        ],
-        "zip"
+        ]/*,
+        "zip"*/
     )
 });

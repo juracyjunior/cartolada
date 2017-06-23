@@ -18,15 +18,15 @@
     .fechado
     {
         color: color(light);
-        font-weight: bold;
-        text-shadow: $text-shadow-default;
+        //font-weight: bold;
+        //text-shadow: $text-shadow-default;
     }
 
     .aberto
     {
         color: color(light);
-        font-weight: bold;
-        text-shadow: $text-shadow-default;
+        //font-weight: bold;
+        //text-shadow: $text-shadow-default;
     }
 
     .fim-mercado
@@ -60,50 +60,23 @@
   {
     float: none;
     margin: 0;
-    position: fixed;
-    top: 6px;
-    right: 5px;
-    //color: color(light);
+    text-align: center;
 
     .info-mercado {
-        padding-right: 35px;
-
         li {
-            padding-bottom: 2px;
+            padding-bottom: 0px;
         }
     }
 
-    /*.fechado
-    {
-        color: color(light);
-        font-weight: bold;
-        text-shadow: $text-shadow-default;
-    }
-
+    .fechado, 
     .aberto
     {
-        color: color(light);
-        font-weight: bold;
-        text-shadow: $text-shadow-default;
-    }*/
-
-    .fim-mercado
-    {
-        
-    }
-
-    .rodada-atual
-    {
-        
+        font-size: font-size(base);
     }
 
     .refresh-feature
     {
-        color: color(light);
-        right: -5px;
-        top: 3px;
-        text-shadow: $text-shadow-default;
-        display: block;
+        display: none;
     }
   }
 }

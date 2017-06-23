@@ -62,3 +62,24 @@ input[type="radio"]
         }
     }
 }
+
+@media #{$information-phone} 
+{
+    input[type="radio"]
+    {
+        & + label 
+        {
+            padding-left: 19px;
+            line-height: 1;
+            font-size: inherit;
+
+            &:before {
+                top: 2px;
+            }
+
+            &:after {
+                top: 5px;
+            }
+        }
+    }
+}

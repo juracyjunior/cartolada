@@ -3,8 +3,11 @@
     <head>
         <title ng-bind="$page.systemTitle"></title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
+        <meta name="theme-color" content="#14866F" />
+
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-title" content="{{ $page.systemTitle }}">
         
@@ -22,9 +25,6 @@
     </head>
     <body>
         <header>
-            <a class="menu-app-mobile-icon" ng-click="$page.showMenuMobile = !$page.showMenuMobile">
-                <i class="menu-icon fa fa-bars" aria-hidden="true"></i>
-            </a>
             <h1 class="systemTitle" ng-bind="$page.systemTitle"></h1>
             <h2 class="featureTitle" ng-bind="$page.title"></h2>
             <aside class="status-mercado">
@@ -45,39 +45,42 @@
         </header>
         <nav class="menu-app">
             <ul>
-                <li>
+                <!--li>
                     <a ui-sref="destaquesRodada" ui-sref-active="active">Destaques rodada #<span ng-bind="vm.data.rodada_atual - 1"></span></a>
+                </li-->
+                <li>
+                    <a ui-sref="atletas" ui-sref-active="active"><i class="fa fa-usd" aria-hidden="true"></i> Mercado</a>
                 </li>
                 <li>
-                    <a ui-sref="atletas" ui-sref-active="active">Mercado</a>
+                    <a ui-sref="destaquesMercado" ui-sref-active="active"><i class="fa fa-sort-numeric-asc" aria-hidden="true"></i> Mais escalados</span></a>
                 </li>
                 <li>
-                    <a ui-sref="destaquesMercado" ui-sref-active="active">Mais escalados</span></a>
+                    <a ui-sref="proximaspartidas" ui-sref-active="active"><i class="fa fa-futbol-o" aria-hidden="true"></i> Partidas</span></a>
                 </li>
                 <li>
-                    <a ui-sref="proximaspartidas" ui-sref-active="active">Partidas</span></a>
-                </li>
-                <li>
-                    <a ui-sref="scouts" ui-sref-active="active">Scouts</span></a>
+                    <a ui-sref="scouts" ui-sref-active="active"><i class="fa fa-line-chart" aria-hidden="true"></i> Scouts</span></a>
                 </li>
             </ul>
         </nav>
-        <nav class="menu-app-mobile" ng-hide="!$page.showMenuMobile">
+        <nav class="menu-app-mobile">
             <ul>
                 <!--li>
-                    <a ui-sref="destaquesRodada" ng-click="$page.showMenuMobile = false" ui-sref-active="active">Destaques rodada #<span ng-bind="vm.data.rodada_atual - 1"></span></a>
+                    <a ui-sref="destaquesRodada" ui-sref-active="active">Destaques rodada #<span ng-bind="vm.data.rodada_atual - 1"></span></a>
                 </li-->
                 <li>
-                    <a ui-sref="atletas" ng-click="$page.showMenuMobile = false" ui-sref-active="active">Mercado</a>
+                    <a ui-sref="atletas" ui-sref-active="active"><i class="fa fa-usd" aria-hidden="true"></i><label class="text-menu">Mercado</label></a>
                 </li>
                 <li>
-                    <a ui-sref="destaquesMercado" ng-click="$page.showMenuMobile = false" ui-sref-active="active">Mais escalados</span></a>
+                    <a ui-sref="destaquesMercado" ui-sref-active="active"><i class="fa fa-star" aria-hidden="true"></i><label class="text-menu">+ Escalados</label></a>
                 </li>
                 <li>
-                    <a ui-sref="proximaspartidas" ng-click="$page.showMenuMobile = false" ui-sref-active="active">Partidas</span></a>
+                    <a ui-sref="proximaspartidas" ui-sref-active="active"><i class="fa fa-futbol-o" aria-hidden="true"></i><label class="text-menu">Partidas</label></a>
                 </li>
                 <li>
-                    <a ui-sref="scouts" ng-click="$page.showMenuMobile = false" ui-sref-active="active">Scouts</span></a>
+                    <a ui-sref="scouts" ui-sref-active="active"><i class="fa fa-line-chart" aria-hidden="true"></i><label class="text-menu">Scouts</label></a>
+                </li>
+                <li>
+                    <a ng-click="$page.doRefresh()"><i class="fa fa-refresh"></i><label class="text-menu">Atualizar</label></a>
                 </li>
             </ul>
         </nav>
