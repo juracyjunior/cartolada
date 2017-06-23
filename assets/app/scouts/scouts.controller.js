@@ -2,9 +2,9 @@
     "use strict";
 
     angular.module("app").
-        controller("scoutsController", ["atletasService", "apiService", "orderByFilter", scoutsController]);
+        controller("scoutsController", ["atletasService", "apiService", "orderByFilter", "$rootScope", scoutsController]);
 
-    function scoutsController(atletasService, apiService, orderBy)
+    function scoutsController(atletasService, apiService, orderBy, $rootScope)
     {
         /*jshint validthis:true*/
         var vm = this;
@@ -26,6 +26,8 @@
 
         vm.filtrar = filtrar;
 
+        $rootScope.$page.doRefresh = doRefresh;
+
         init();
 
         function init(){
@@ -43,12 +45,14 @@
             vm.posicoes = vm.data.posicoes;
             vm.clubes = vm.data.clubes;
 
+            delete vm.atletas;
+
             for (var a in vm.data.atletas) {
+                if (!vm.atletas)
+                    vm.atletas = [];
                 vm.atletas.push(vm.data.atletas[a]);
             }
 
-            //vm.atletas = vm.data.atletas;
-            console.log(vm.data);
             filtrar();
         }
 
@@ -105,6 +109,11 @@
                 paginas.push({index: i});
             }
             return paginas;
+        }
+
+        function doRefresh()
+        {
+            getScouts();
         }
     }
 })();
